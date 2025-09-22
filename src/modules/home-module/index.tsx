@@ -5,7 +5,7 @@ import HomePage from "./pages/home";
 import ShopPage from "./pages/shop";
 import TasksPage from "./pages/tasks";
 
-const getHomeModule = (urls: TAppUrls): RouteObject[] => {
+const getHomeModuleRoutes = (urls: TAppUrls): RouteObject[] => {
 	return [
 		{
 			element: <HomeModuleLayout />,
@@ -27,4 +27,4 @@ const getHomeModule = (urls: TAppUrls): RouteObject[] => {
 	];
 };
 
-export { getHomeModule };
+export { getHomeModuleRoutes as getHomeModule };
