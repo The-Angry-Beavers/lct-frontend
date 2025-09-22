@@ -1,37 +1,51 @@
 {
-  "name": "form-test",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "@tailwindcss/vite": "^4.1.13",
-    "classnames": "^2.5.1",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1",
-    "react-hook-form": "^7.62.0",
-    "react-imask": "^7.6.1",
-    "react-router": "^7.8.2",
-    "tailwindcss": "^4.1.13"
-  },
-  "devDependencies": {
-    "@eslint/js": "^9.33.0",
-    "@types/node": "^24.3.1",
-    "@types/react": "^19.1.10",
-    "@types/react-dom": "^19.1.7",
-    "@types/react-input-mask": "^3.0.6",
-    "@vitejs/plugin-react": "^5.0.0",
-    "eslint": "^9.33.0",
-    "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-react-refresh": "^0.4.20",
-    "globals": "^16.3.0",
-    "typescript": "~5.8.3",
-    "typescript-eslint": "^8.39.1",
-    "vite": "^7.1.2"
-  }
+	"name": "form-test",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc -b && vite build",
+		"lint": "eslint .",
+		"preview": "vite preview",
+		"prepare": "husky",
+		"precommit": "lint-staged --allow-empty"
+	},
+	"lint-staged": {
+		"*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}": [
+			"biome lint --write",
+			"biome format --write",
+			"biome check --files-ignore-unknown=true",
+			"biome check --write --no-errors-on-unmatched"
+		],
+		"*": [
+			"biome check --no-errors-on-unmatched --files-ignore-unknown=true"
+		]
+	},
+	"dependencies": {
+		"@tanstack/react-query": "^5.90.1",
+		"classnames": "^2.5.1",
+		"react": "^19.1.1",
+		"react-dom": "^19.1.1",
+		"react-hook-form": "^7.62.0",
+		"react-imask": "^7.6.1",
+		"react-router": "^7.8.2"
+	},
+	"devDependencies": {
+		"lint-staged": "^16.1.0",
+		"husky": "^9.1.7",
+		"@biomejs/biome": "2.2.4",
+		"@types/node": "^24.3.1",
+		"@types/react": "^19.1.10",
+		"@types/react-dom": "^19.1.7",
+		"@types/react-input-mask": "^3.0.6",
+		"@vitejs/plugin-react": "^5.0.0",
+		"autoprefixer": "^10.4.21",
+		"globals": "^16.3.0",
+		"postcss": "^8.5.6",
+		"tailwindcss": "^3.4.17",
+		"typescript": "~5.8.3",
+		"vite": "^7.1.2"
+	},
+	"packageManager": "pnpm@10.2.1+sha512.398035c7bd696d0ba0b10a688ed558285329d27ea994804a52bad9167d8e3a72bcb993f9699585d3ca25779ac64949ef422757a6c31102c12ab932e5cbe5cc92"
 }
