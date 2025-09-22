@@ -1,19 +1,14 @@
-import { LoanWizardRoutes } from "@shared/config/routes";
-import { createBrowserRouter } from "react-router";
-import { Step1Form, Step2Form, Step3Form } from "@/features/loan";
-import LoanWizardPage from "@/pages/loan-wizard";
+import { createBrowserRouter, Navigate } from "react-router";
+import { getHomeModule } from "@/modules/home-module";
+
+import { AppUrls } from "@/shared/config/routes";
 
 const router = createBrowserRouter([
 	{
-		path: LoanWizardRoutes.ROOT,
-		element: <LoanWizardPage />,
-		children: [
-			{ index: true, element: <Step1Form /> },
-			{ path: LoanWizardRoutes.STEP1, element: <Step1Form /> },
-			{ path: LoanWizardRoutes.STEP2, element: <Step2Form /> },
-			{ path: LoanWizardRoutes.STEP3, element: <Step3Form /> },
-		],
+		index: true,
+		element: <Navigate to={AppUrls.HOME.navigatePath} />,
 	},
+	...getHomeModule(AppUrls),
 ]);
 
 export default router;

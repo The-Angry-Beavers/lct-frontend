@@ -1,4 +1,6 @@
-type TRoute = {
+import { matchPath } from "react-router";
+
+export type TRoute = {
 	// путь для react router
 	path: string;
 	// путь для навигации в этот роут
@@ -20,3 +22,12 @@ export const AppUrls = {
 		navigatePath: "/tasks",
 	},
 } satisfies Record<string, TRoute>;
+
+export type TAppUrls = typeof AppUrls;
+export type TAppUrlsKey = keyof typeof AppUrls;
+
+export const findRoute = (pathname: string): TRoute | undefined => {
+	return Object.values(AppUrls).find((route) =>
+		matchPath({ path: route.path, end: true }, pathname),
+	);
+};

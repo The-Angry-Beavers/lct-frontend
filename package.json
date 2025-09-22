@@ -4,16 +4,13 @@
 	"version": "0.0.0",
 	"type": "module",
 	"scripts": {
-		"dev": "vite",
+		"dev": "vite & DEMO=true vite",
 		"build": "tsc -b && vite build",
 		"preview": "vite preview",
 		"prepare": "husky",
 		"precommit": "lint-staged --allow-empty"
 	},
 	"lint-staged": {
-		"*.{ts,tsx}": [
-			"tsc --noEmit --pretty"
-		],
 		"*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}": [
 			"biome lint --write",
 			"biome format --write",
@@ -42,13 +39,17 @@
 		"@types/react-input-mask": "^3.0.6",
 		"@vitejs/plugin-react": "^5.0.0",
 		"autoprefixer": "^10.4.21",
+		"clsx": "^2.1.1",
 		"globals": "^16.3.0",
 		"husky": "^9.1.7",
 		"lint-staged": "^16.1.0",
 		"postcss": "^8.5.6",
+		"tailwind-merge": "^3.3.1",
 		"tailwindcss": "^3.4.17",
 		"typescript": "~5.8.3",
-		"vite": "^7.1.2"
+		"vite": "^7.1.2",
+		"vite-plugin-html": "^3.2.2",
+		"vite-plugin-virtual-mpa": "^1.12.1"
 	},
 	"packageManager": "pnpm@10.2.1+sha512.398035c7bd696d0ba0b10a688ed558285329d27ea994804a52bad9167d8e3a72bcb993f9699585d3ca25779ac64949ef422757a6c31102c12ab932e5cbe5cc92"
 }

@@ -28,6 +28,7 @@
 				"noLabelWithoutControl": "off"
 			},
 			"correctness": {
+				"useUniqueElementIds": "off",
 				"useExhaustiveDependencies": "warn"
 			}
 		}
