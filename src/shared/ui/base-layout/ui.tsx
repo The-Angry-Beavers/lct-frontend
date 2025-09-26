@@ -1,7 +1,5 @@
 import {
-	createContext,
 	type ReactNode,
-	useContext,
 	useEffect,
 	useRef,
 	useState,
@@ -14,7 +12,7 @@ const BaseLayout = (props: {
 	navbar?: ReactNode;
 	header?: ReactNode;
 }) => {
-	const { page, header, navbar } = props;
+	const { page, header } = props;
 	const [sideBarIsOpen, setSideBarIsOpen] = useState(false);
 	const navbarRef = useRef<HTMLDivElement | null>(null);
 	const headerRef = useRef<HTMLDivElement | null>(null);
@@ -94,10 +92,6 @@ const BaseLayout = (props: {
 						<div className="hidden md:block">{/* aside here */}</div>
 						<div ref={containerRef}>{page}</div>
 					</div>
-				</div>
-				<div ref={navbarRef} className="fixed bottom-0 left-0 right-0 z-10">
-					<div id="navbar-portal" />
-					<div className="pb-[env(safe-area-inset-bottom)]">{navbar}</div>
 				</div>
 			</div>
 		</BaseLayoutContext.Provider>

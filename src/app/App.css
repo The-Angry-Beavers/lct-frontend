@@ -1,4 +1,7 @@
 #root {
-	color: white;
-	background: #0d0581;
+	--primary-color: #0d0581;
+	--white: #ffffff;
+
+	color: var(--white);
+	background: var(--primary-color);
 }

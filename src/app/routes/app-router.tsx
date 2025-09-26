@@ -1,14 +1,18 @@
-import { createBrowserRouter, Navigate } from "react-router";
-import { getHomeModule } from "@/modules/home-module";
+import { createBrowserRouter } from "react-router";
 
-import { AppUrls } from "@/shared/config/routes";
+import HomePage from "@/modules/home-module/pages/home";
 
 const router = createBrowserRouter([
-	{
-		index: true,
-		element: <Navigate to={AppUrls.HOME.navigatePath} />,
-	},
-	...getHomeModule(AppUrls),
+  {
+	path: "/",
+    index: true,
+    element: <HomePage />,
+  },
+  {
+    path: "/home",
+	element: <HomePage />
+  },
+
 ]);
 
 export default router;
