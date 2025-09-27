@@ -23,6 +23,7 @@ export default defineConfig(({ mode }): UserConfig => {
 			},
 		},
 		server: {
+			host: "0.0.0.0",
 			port: isDemo ? 3001 : 3000,
 		},
 	};

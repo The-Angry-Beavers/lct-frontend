@@ -1,18 +1,18 @@
 import { createBrowserRouter } from "react-router";
 
-import HomePage from "@/modules/home-module/pages/home";
+import GamePage from "@/pages/game-page";
+import StartPage from "@/pages/start-page";
 
 const router = createBrowserRouter([
-  {
-	path: "/",
-    index: true,
-    element: <HomePage />,
-  },
-  {
-    path: "/home",
-	element: <HomePage />
-  },
-
+	{
+		path: "/",
+		index: true,
+		element: <StartPage />,
+	},
+	{
+		path: "/game",
+		element: <GamePage />,
+	},
 ]);
 
 export default router;
