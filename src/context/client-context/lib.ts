@@ -1,8 +1,10 @@
 import { createContext, useContext } from "react";
+import type { Client } from "@/shared/types";
 
 export type IClientContext = {
 	questionnaireIsOpen: boolean;
 	setQuestionnaireIsOpen: (value: boolean) => void;
+	client: Client;
 };
 
 export const ClientContext = createContext<IClientContext | null>(null);

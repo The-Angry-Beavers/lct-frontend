@@ -56,7 +56,7 @@ const BaseLayout = (props: { children?: ReactNode }) => {
 
 	return (
 		<div className="max-w-screen overflow-x-clip relative">
-			<div className="w-full min-h-[var(--100vh)] flex max-w-[90rem]  mx-auto relative">
+			<div className="w-full h-[var(--100vh)] flex max-w-[90rem]  mx-auto relative">
 				<div className="w-full grid grid-cols-1 relative">
 					<div ref={containerRef}>{children}</div>
 				</div>
