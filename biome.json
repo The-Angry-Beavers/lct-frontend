@@ -17,7 +17,8 @@
 		"rules": {
 			"recommended": true,
 			"suspicious": {
-				"noUnknownAtRules": "warn"
+				"noUnknownAtRules": "warn",
+				"useIterableCallbackReturn": "warn"
 			},
 			"style": {
 				"noNonNullAssertion": "warn"

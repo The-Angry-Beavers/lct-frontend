@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { useClientContext } from "@/context/client-context";
 
 const QuestionnaireModal = () => {
+	const { client } = useClientContext();
 	const { questionnaireIsOpen: open, setQuestionnaireIsOpen: setOpen } =
 		useClientContext();
 
@@ -53,25 +54,25 @@ const QuestionnaireModal = () => {
 					<div className="grid grid-cols-[1fr_1.85fr] gap-4">
 						<img
 							alt=""
-							src="https://placecats.com/300/200"
+							src={client.sprite}
 							className="bg-[#6188E4] rounded-lg h-full object-cover mb-4"
 						/>
 						<div>
 							<h2 className="font-halvar font-semibold text-2xl leading-[150%]">
-								ИМЯ
-								<br />
-								ФАМИЛИЯ
+								{client.name}
 							</h2>
 							<div>
 								<span className="font-gzbank font-light text-[#DFE1EE] text-xs">
 									Возраст
 								</span>
-								<p className="font-gzbank font-semibold">19 лет</p>
+								<p className="font-gzbank font-semibold">{client.age}</p>
 								<hr className="my-2" />
 								<span className="font-gzbank font-light text-[#DFE1EE] text-xs">
 									Сфера работы
 								</span>
-								<p className="font-gzbank font-semibold">Финансовые услуги</p>
+								<p className="font-gzbank font-semibold">
+									{client.job_spehere}
+								</p>
 							</div>
 						</div>
 					</div>

@@ -1,16 +1,18 @@
 import { type ReactNode, useState } from "react";
-import type { Client } from "@/shared/types";
+import { useLevelContext } from "../level-context";
 import { ClientContext } from "./lib";
 
-const ClientProvider = (props: { children: ReactNode; client: Client }) => {
+const ClientProvider = (props: { children: ReactNode }) => {
+	const { currentClient } = useLevelContext();
 	const [questionnaireIsOpen, setQuestionnaireIsOpen] =
 		useState<boolean>(false);
+
 	return (
 		<ClientContext.Provider
 			value={{
 				questionnaireIsOpen,
 				setQuestionnaireIsOpen,
-				client: props.client,
+				client: currentClient,
 			}}
 		>
 			{props.children}

@@ -1,4 +1,5 @@
 export type Client = {
+	name: string;
 	gender: "male" | "female";
 	age: string;
 	job_spehere: string;

@@ -1,14 +1,31 @@
 import type { Client } from "@/shared/types";
-import img from "./student-woman.webp?url";
+import img2 from "./student-man.webp?url";
+import img1 from "./student-woman.webp?url";
 
-export const MockClient: Client = {
+export const MockClient1: Client = {
+	name: "Маша",
 	gender: "female",
 	age: "young",
 	job_spehere: "Студент",
 	is_married: false,
 	is_have_child: false,
 	is_have_real_estate: false,
-	message: "",
-	sprite: img,
+	message:
+		"Деняк совсем нет... Мне бы завести ещё одну кредитку. Что вы можете мне предложить?",
+	sprite: img1,
+	city: "Москва",
+};
+
+export const MockClient2: Client = {
+	name: "Саша",
+	gender: "male",
+	age: "young",
+	job_spehere: "Студент",
+	is_married: false,
+	is_have_child: false,
+	is_have_real_estate: false,
+	message:
+		"В интернете услышал про ФПИ Банк, там был указан ваш адрес. Хотел бы оформить вашу дебетовую карту.",
+	sprite: img2,
 	city: "Москва",
 };
