@@ -1,10 +1,10 @@
 import QuestionnaireBooklet from "@shared/assets/questionnaire_booklet.png";
 import { AnimatePresence, motion } from "motion/react";
 import { useCallback, useState } from "react";
-import { usePersonContext } from "@/context/person-context";
+import { useClientContext } from "@/context/client-context";
 
 const TableQuestionnaire = () => {
-	const { questionnaireIsOpen, setQuestionnaireIsOpen } = usePersonContext();
+	const { questionnaireIsOpen, setQuestionnaireIsOpen } = useClientContext();
 
 	const [isTapped, setIsTapped] = useState(false);
 	const [pendingOpen, setPendingOpen] = useState(false);

@@ -1,16 +1,16 @@
 import { type ReactNode, useState } from "react";
-import { PersonContext } from "./lib";
+import { ClientContext } from "./lib";
 
-const PersonProvider = (props: { children: ReactNode }) => {
+const ClientProvider = (props: { children: ReactNode }) => {
 	const [questionnaireIsOpen, setQuestionnaireIsOpen] =
 		useState<boolean>(false);
 	return (
-		<PersonContext.Provider
+		<ClientContext.Provider
 			value={{ questionnaireIsOpen, setQuestionnaireIsOpen }}
 		>
 			{props.children}
-		</PersonContext.Provider>
+		</ClientContext.Provider>
 	);
 };
 
-export { PersonProvider };
+export { ClientProvider };

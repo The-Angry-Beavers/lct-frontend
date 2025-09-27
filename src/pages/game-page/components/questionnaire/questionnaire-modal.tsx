@@ -1,11 +1,11 @@
 import QuestionnaireBooklet from "@shared/assets/questionnaire_booklet.png";
 import { AnimatePresence, motion } from "motion/react";
 
-import { usePersonContext } from "@/context/person-context";
+import { useClientContext } from "@/context/client-context";
 
 const QuestionnaireModal = () => {
 	const { questionnaireIsOpen: open, setQuestionnaireIsOpen: setOpen } =
-		usePersonContext();
+		useClientContext();
 
 	return (
 		<AnimatePresence mode="popLayout">

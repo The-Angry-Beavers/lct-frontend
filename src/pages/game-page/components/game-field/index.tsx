@@ -1,4 +1,4 @@
-import { PersonProvider } from "@/context/person-context";
+import { ClientProvider } from "@/context/client-context";
 
 import BackgroundImg from "@/shared/assets/bg.png?url";
 import DeskImg from "@/shared/assets/desk.png?url";
@@ -32,7 +32,7 @@ const Background = () => {
 
 const GameField = () => {
 	return (
-		<PersonProvider>
+		<ClientProvider>
 			<div className="flex-1 relative">
 				<Background />
 
@@ -42,7 +42,7 @@ const GameField = () => {
 				<MuteButton />
 			</div>
 			<QuestionnaireModal />
-		</PersonProvider>
+		</ClientProvider>
 	);
 };
 

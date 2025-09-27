@@ -1,14 +1,14 @@
 import { createContext, useContext } from "react";
 
-export type IPersonContext = {
+export type IClientContext = {
 	questionnaireIsOpen: boolean;
 	setQuestionnaireIsOpen: (value: boolean) => void;
 };
 
-export const PersonContext = createContext<IPersonContext | null>(null);
+export const ClientContext = createContext<IClientContext | null>(null);
 
-export const usePersonContext = () => {
-	const context = useContext(PersonContext);
+export const useClientContext = () => {
+	const context = useContext(ClientContext);
 	if (!context) {
 		throw new Error("usePersonContext must be used within a PersonProvider");
 	}
