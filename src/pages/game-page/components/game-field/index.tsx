@@ -68,12 +68,10 @@ const ClientMessage = () => {
 					animate={{ x: 0 }}
 					className="absolute w-[19.375rem] right-[1rem] bottom-[calc(12rem+8rem)]"
 				>
-					<div className="bg-white translate-y-[100%] skew-x-[-20deg] rounded-[1rem] border-2 border-black">
-						<div className="text-black skew-x-[20deg] px-4 py-2">
-							{client.message}
-						</div>
-						<div className="absolute skew-x-[20deg] left-[2rem] top-[-1.25rem] rounded-full px-2 py-[0.0625rem] border-2 border-white bg-[#1919EF]">
-							{client.name}
+					<div className="bg-white translate-y-[100%] rounded-[1rem] border-2 border-black">
+						<div className="text-black px-4 py-2">{client.message}</div>
+						<div className="absolute left-[2rem] top-[-1.25rem] rounded-full px-2 py-[0.0625rem] border-2 border-white bg-[#1919EF]">
+							{client.first_name}
 						</div>
 					</div>
 				</motion.div>
