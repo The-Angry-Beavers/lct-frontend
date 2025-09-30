@@ -1,5 +1,6 @@
 import { type ReactNode, useEffect, useMemo, useState } from "react";
 import { useEvents } from "@/packages/emitter";
+import { useCalcLevelResults } from "@/queries";
 import type { Level, Situation } from "@/shared/types";
 import { LevelContext, type SituationAnswer } from "./lib";
 
@@ -36,7 +37,25 @@ const LevelProvider = (props: LevelProviderProps) => {
 
 	const emitter = useEvents();
 
+	const { mutate, data } = useCalcLevelResults();
+
+	const onLevelFinish = () => {
+		mutate({
+			seed: level.level_info.seed,
+			answers,
+		});
+	};
+
+	useEffect(() => {
+		console.log("results", data);
+	}, [data]);
+
 	const goNextSituation = () => {
+		if (currentSituationIndex === 9) {
+			onLevelFinish();
+			return;
+		}
+
 		const exitingSituation = situations[currentSituationIndex]; // текущая ситуация перед сменой
 		setCurrentSituationIndex(
 			(prevIndex) => (prevIndex + 1) % situations.length,

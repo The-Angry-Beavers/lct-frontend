@@ -1,4 +1,4 @@
-import { v4 as uuidv4 } from "uuid";
+import type { SituationAnswer } from "@/context/level-context/lib";
 import type { Level } from "@/shared/types";
 import { baseURL, http } from "..";
 import type { SituationDTO } from "./dto";
@@ -42,7 +42,18 @@ export const getHint = async () => {
 	return response.data;
 };
 
-export const acknowledgeDayFinish = async () => {
-	const response = await http.post("/api/game/acknowledgeDayFinish");
+export const acknowledgeDayFinish = async (args: {
+	seed: string;
+	answers: SituationAnswer[];
+}) => {
+	const answers = args.answers.map((e) => ({
+		iteration: e.situationIndex,
+		recommended_product_ids: e.ids,
+	}));
+	const payload = {
+		seed: args.seed,
+		answers,
+	};
+	const response = await http.post("/api/game/acknowledgeDayFinish", payload);
 	return response.data;
 };

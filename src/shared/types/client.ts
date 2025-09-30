@@ -19,6 +19,8 @@ export type Answer = {
 		link: string;
 	};
 	is_correct: boolean;
+	correct_but_not_selected_msg: string;
+	incorect_but_selected_msg: string;
 };
 
 export type Situation = {
