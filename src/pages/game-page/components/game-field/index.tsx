@@ -12,17 +12,16 @@ import QuestionnaireModal from "../questionnaire/questionnaire-modal";
 import TableQuestionnaire from "../questionnaire/table-questionnaire";
 
 const Typewriter = ({ text, speed = 50 }: { text: string; speed?: number }) => {
-  const [displayed, setDisplayed] = useState("");
+  const [index, setIndex] = useState(0);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
-    audioRef.current = new Audio("/sounds/chatter.mp3"); // public/sounds/
+    audioRef.current = new Audio("/sounds/chatter.mp3");
     audioRef.current.loop = true;
   }, []);
 
   useEffect(() => {
-    setDisplayed("");
-    let i = 0;
+    setIndex(0);
 
     if (audioRef.current) {
       audioRef.current.currentTime = 0;
@@ -30,30 +29,25 @@ const Typewriter = ({ text, speed = 50 }: { text: string; speed?: number }) => {
     }
 
     const interval = setInterval(() => {
-      if (i < text.length) {
-        setDisplayed((prev) => prev + text.charAt(i));
-        i++;
-      }
-      if (i >= text.length) {
-        clearInterval(interval);
-
-        if (audioRef.current) {
-          audioRef.current.pause();
+      setIndex((prev) => {
+        if (prev >= text.length) {
+          clearInterval(interval);
+          if (audioRef.current) audioRef.current.pause();
+          return prev;
         }
-      }
+        return prev + 1;
+      });
     }, speed);
 
     return () => {
       clearInterval(interval);
-      if (audioRef.current) {
-        audioRef.current.pause();
-      }
+      if (audioRef.current) audioRef.current.pause();
     };
   }, [text, speed]);
 
   return (
     <motion.span key={text} initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-      {displayed}
+      {text.slice(0, index)}
     </motion.span>
   );
 };
