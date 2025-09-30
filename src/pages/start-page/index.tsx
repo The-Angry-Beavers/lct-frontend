@@ -4,10 +4,20 @@ import bgImage from "@/shared/assets/background.webp?url";
 import MuteButton from "@/shared/components/mute-button";
 import PageContainer from "@/shared/ui/page-container";
 import Logo from "@shared/assets/logo.png";
+import { useEffect, useState } from "react";
 
 const StartPage = () => {
   const navigate = useNavigate();
+
+  const [completedOnboarding, setCompletedOnboarding] = useState(false);
   const { play } = useMusicPlayer();
+console.log(completedOnboarding, localStorage.getItem("completed_onboarding"))
+  useEffect(() => {
+    const completed_onboarding = localStorage.getItem("completed_onboarding");
+    if (completed_onboarding) {
+      setCompletedOnboarding(true);
+    }
+  }, [localStorage]);
   return (
     <PageContainer className="relative">
       <img
@@ -26,7 +36,11 @@ const StartPage = () => {
               setTimeout(() => {
                 play("background");
               }, 300);
-              navigate("/game");
+              if (completedOnboarding) {
+                navigate("/game");
+              } else {
+                navigate("/onboarding");
+              }
             }}
             type="button"
             className="bg-white py-4 px-6 text-[#060698] text-xl rounded-2xl"

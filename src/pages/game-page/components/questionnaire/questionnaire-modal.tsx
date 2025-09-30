@@ -76,7 +76,7 @@ const Questions = () => {
 		<>
 			<div className="flex flex-col">
 				<CheckboxGroup
-					label="Выберите поисковики"
+					label=""
 					name="searchEngines"
 					options={options}
 					values={currentAnswers}
@@ -126,7 +126,7 @@ const QuestionnaireModal = () => {
 					<button
 						type="button"
 						onClick={() => setOpen(false)}
-						className="relative z-10 mb-4 font-halvar font-semibold text-lg w-full bg-[linear-gradient(180deg,#060698_58.17%,rgba(6,6,152,0)_100%)]
+						className="fixed top-0 pt-4 pb-8 z-10 font-halvar font-semibold text-lg w-full bg-[linear-gradient(180deg,#060698_58.17%,rgba(6,6,152,0)_100%)]
  hover:text-gray-200 flex items-center gap-2 duration-75"
 					>
 						<svg
@@ -146,7 +146,7 @@ const QuestionnaireModal = () => {
 						</svg>
 						АНКЕТА
 					</button>
-					<div className="grid grid-cols-[1fr_1.85fr] gap-4">
+					<div className="grid grid-cols-[1fr_1.85fr] gap-4 mt-10">
 						<img
 							alt=""
 							src={client.sprite}

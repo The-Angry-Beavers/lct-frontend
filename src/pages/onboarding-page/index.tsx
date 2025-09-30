@@ -3,6 +3,7 @@ import { motion } from "motion/react";
 import bgImage from "@shared/assets/background.webp?url";
 import { useState } from "react";
 import { Link } from "react-router";
+import MuteButton from "@/shared/components/mute-button";
 
 const texts = [
   "Добро пожаловать! Сейчас мы быстро покажем основы, и вы будете готовы помогать клиентам достигать их мечты.",
@@ -36,7 +37,11 @@ const OnboardingPage = () => {
       </motion.div>
       <div className="absolute bottom-[1rem] w-full flex justify-around gap-4 px-4">
         {step === 1 && (
-          <Link to={"/game"} className="border border-white py-3 px-4 rounded-xl">
+          <Link
+            to={"/game"}
+            onClick={() => localStorage.setItem("completed_onboarding", "true")}
+            className="border border-white py-3 px-4 rounded-xl"
+          >
             Пропустить
           </Link>
         )}
@@ -51,11 +56,15 @@ const OnboardingPage = () => {
         {step === 4 && (
           <Link
             to={"/game"}
+            onClick={() => localStorage.setItem("completed_onboarding", "true")}
             className="bg-white text-[#060698] py-3 px-4 rounded-xl grow text-center"
           >
             Завершить обучение
           </Link>
         )}
+      </div>
+      <div className="absolute left-2 top-2">
+        <MuteButton />
       </div>
     </div>
   );
