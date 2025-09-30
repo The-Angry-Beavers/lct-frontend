@@ -10,6 +10,7 @@ export const MusicPlayerProvider = ({ children }: { children: ReactNode }) => {
 	// Рефы аудио
 	const audioRefs = useRef<Record<TrackName, HTMLAudioElement>>({
 		background: Object.assign(new Audio(tracks.background), { loop: true }),
+		ring: Object.assign(new Audio(tracks.ring), { loop: true }),
 		// click: new Audio(tracks.click),
 		// success: new Audio(tracks.success),
 	});

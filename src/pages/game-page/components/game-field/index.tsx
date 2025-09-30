@@ -7,6 +7,7 @@ import { useGenerateLevel } from "@/queries";
 import BackgroundImg from "@/shared/assets/bg.png?url";
 import DeskImg from "@/shared/assets/desk.png?url";
 import MuteButton from "@/shared/components/mute-button";
+import Phone from "../phone";
 import QuestionnaireModal from "../questionnaire/questionnaire-modal";
 import TableQuestionnaire from "../questionnaire/table-questionnaire";
 
@@ -15,6 +16,9 @@ const Table = () => {
 		<div className="absolute bottom-0">
 			<img alt="" src={DeskImg} />
 			<div className="w-3/4 h-[120px] -left-[50px] -top-[100px] bg-[#1F1FA233] backdrop-blur-sm absolute rounded-3xl" />
+			<div className="absolute left-4 bottom-16">
+				<Phone />
+			</div>
 			<TableQuestionnaire />
 		</div>
 	);
@@ -29,20 +33,6 @@ const Background = () => {
 				alt=""
 			/>
 		</div>
-	);
-};
-
-const NextButton = () => {
-	const { goNextSituation } = useLevelContext();
-	return (
-		<button
-			onClick={() => {
-				goNextSituation();
-			}}
-			type="button"
-		>
-			Next client
-		</button>
 	);
 };
 
@@ -70,6 +60,9 @@ const ClientMessage = () => {
 		<AnimatePresence mode="popLayout">
 			{!hidden && (
 				<motion.div
+					onClick={() => {
+						setHidden(true);
+					}}
 					exit={{ x: "100vw" }}
 					initial={{ x: "100vw" }}
 					animate={{ x: 0 }}
