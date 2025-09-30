@@ -10,3 +10,25 @@ export type Client = {
 	message: string;
 	sprite: string;
 };
+
+export type Answer = {
+	product: {
+		id: number;
+		name: string;
+		link: string;
+	};
+	is_correct: boolean;
+};
+
+export type Situation = {
+	index: number;
+	client: Client;
+	answers: Answer[];
+};
+
+export type Level = {
+	level_info: {
+		seed: string;
+	};
+	situations: Situation[];
+};

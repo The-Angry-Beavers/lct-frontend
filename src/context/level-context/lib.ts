@@ -1,11 +1,11 @@
 import { createContext, useContext } from "react";
-import type { Client } from "@/shared/types";
+import type { Situation } from "@/shared/types";
 
 export type ILevelContext = {
-	clients: Client[];
-	currentClient: Client;
-	currentClientIndex: number;
-	goNextClient: () => void;
+	goNextSituation: () => void;
+	currentSituationIndex: number;
+	currentSituation: Situation;
+	situations: Situation[];
 };
 
 export const LevelContext = createContext<ILevelContext | null>(null);

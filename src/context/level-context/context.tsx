@@ -1,41 +1,57 @@
-import { type ReactNode, useMemo, useState } from "react";
-import { MockClient1, MockClient2 } from "@/mock/mock-client";
+import { type ReactNode, useEffect, useMemo, useState } from "react";
 import { useEvents } from "@/packages/emitter";
-import type { Client } from "@/shared/types";
+import type { Level, Situation } from "@/shared/types";
 import { LevelContext } from "./lib";
 
 type LevelProviderProps = {
+	level: Level;
 	children:
 		| ReactNode
 		| ((context: {
-				goNextClient: () => void;
-				currentClientIndex: number;
-				currentClient: Client;
-				clients: Client[];
+				goNextSituation: () => void;
+				currentSituationIndex: number;
+				currentSituation: Situation;
+				situations: Situation[];
 		  }) => ReactNode);
 };
 
-const LevelProvider = (props: LevelProviderProps) => {
-	const [clients] = useState<Client[]>([MockClient1, MockClient2]);
-	const [currentClientIndex, setCurrentClientIndex] = useState(0);
+const preloadImages = (urls: string[]) => {
+	urls.forEach((url) => {
+		console.log(url);
+		const img = new Image();
+		img.src = url;
+	});
+};
 
-	const currentClient = useMemo(() => {
-		return clients[currentClientIndex];
-	}, [currentClientIndex, clients]);
+const LevelProvider = (props: LevelProviderProps) => {
+	const { level } = props;
+	const { situations } = level;
+
+	const [currentSituationIndex, setCurrentSituationIndex] = useState(0);
+
+	const currentSituation = useMemo(() => {
+		return situations[currentSituationIndex];
+	}, [currentSituationIndex, situations]);
 
 	const emitter = useEvents();
 
-	const goNextClient = () => {
-		const exitingClient = clients[currentClientIndex]; // текущий клиент перед сменой
-		setCurrentClientIndex((prevIndex) => (prevIndex + 1) % clients.length);
-		emitter.emit("onClientExit", { client: exitingClient });
+	const goNextSituation = () => {
+		const exitingSituation = situations[currentSituationIndex]; // текущая ситуация перед сменой
+		setCurrentSituationIndex(
+			(prevIndex) => (prevIndex + 1) % situations.length,
+		);
+		emitter.emit("onClientExit", { client: exitingSituation.client });
 	};
 
+	useEffect(() => {
+		preloadImages(situations.map((e) => e.client.sprite));
+	}, []);
+
 	const contextValue = {
-		goNextClient,
-		currentClientIndex,
-		currentClient,
-		clients,
+		goNextSituation,
+		currentSituationIndex,
+		currentSituation,
+		situations,
 	};
 
 	return (

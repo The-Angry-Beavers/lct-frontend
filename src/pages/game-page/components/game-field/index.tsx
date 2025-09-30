@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { ClientProvider, useClientContext } from "@/context/client-context";
 import { LevelProvider, useLevelContext } from "@/context/level-context";
 import { useEvents } from "@/packages/emitter";
+import { useGenerateLevel } from "@/queries";
 import BackgroundImg from "@/shared/assets/bg.png?url";
 import DeskImg from "@/shared/assets/desk.png?url";
 import MuteButton from "@/shared/components/mute-button";
@@ -32,11 +33,11 @@ const Background = () => {
 };
 
 const NextButton = () => {
-	const { goNextClient } = useLevelContext();
+	const { goNextSituation } = useLevelContext();
 	return (
 		<button
 			onClick={() => {
-				goNextClient();
+				goNextSituation();
 			}}
 			type="button"
 		>
@@ -89,7 +90,7 @@ const ClientMessage = () => {
 };
 
 const Client = () => {
-	const { currentClientIndex } = useLevelContext();
+	const { currentSituationIndex } = useLevelContext();
 	const { client } = useClientContext();
 	const { sprite } = client;
 	const { emit } = useEvents();
@@ -107,7 +108,7 @@ const Client = () => {
 							// setIsClientReady(true);
 						}
 					}}
-					key={currentClientIndex} // ключ по client.id для exit
+					key={currentSituationIndex} // ключ по client.id для exit
 					className="bottom-0 absolute"
 					alt=""
 					src={sprite}
@@ -135,8 +136,14 @@ const Client = () => {
 };
 
 const GameField = () => {
+	const { data, isLoading } = useGenerateLevel();
+
+	if (isLoading || !data) {
+		return null;
+	}
+
 	return (
-		<LevelProvider>
+		<LevelProvider level={data}>
 			<ClientProvider>
 				<div className="flex-1 relative">
 					<Background />

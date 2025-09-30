@@ -3,7 +3,7 @@ import { useLevelContext } from "../level-context";
 import { ClientContext } from "./lib";
 
 const ClientProvider = (props: { children: ReactNode }) => {
-	const { currentClient } = useLevelContext();
+	const { currentSituation } = useLevelContext();
 	const [questionnaireIsOpen, setQuestionnaireIsOpen] =
 		useState<boolean>(false);
 
@@ -12,7 +12,7 @@ const ClientProvider = (props: { children: ReactNode }) => {
 			value={{
 				questionnaireIsOpen,
 				setQuestionnaireIsOpen,
-				client: currentClient,
+				client: currentSituation.client,
 			}}
 		>
 			{props.children}
