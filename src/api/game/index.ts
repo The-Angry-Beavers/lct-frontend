@@ -16,13 +16,12 @@ export const getSituation = async (args: {
 	return response.data;
 };
 
-export const getLevel = async (): Promise<Level> => {
-	const seed = uuidv4();
+export const getLevel = async (seed: string): Promise<Level> => {
 	const CLIENT_COUNT = 10;
 
 	const situations = await Promise.all(
 		Array.from({ length: CLIENT_COUNT }, (_, i) =>
-			getSituation({ seed, num_iterations: i }),
+			getSituation({ seed, num_iterations: i + 100 }),
 		),
 	);
 
