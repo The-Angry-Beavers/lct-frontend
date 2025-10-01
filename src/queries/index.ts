@@ -6,6 +6,10 @@ import { acknowledgeDayFinish, getLevel } from "@/api/game";
 export const useGenerateLevel = () => {
 	const [seed] = useState(v4());
 	return useQuery({
+		staleTime: Infinity,
+		refetchOnMount: false,
+		refetchOnWindowFocus: false,
+		refetchOnReconnect: false,
 		queryKey: ["level", seed],
 		queryFn: () => {
 			const level = getLevel(seed);
