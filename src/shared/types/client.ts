@@ -23,10 +23,20 @@ export type Answer = {
 	is_correct: boolean;
 };
 
+export type Hint = {
+	product: {
+		id: number;
+		name: string;
+		link: string;
+	};
+	text: string;
+};
+
 export type Situation = {
 	index: number;
 	client: Client;
 	answers: Answer[];
+	hint: Hint;
 };
 
 export type Level = {

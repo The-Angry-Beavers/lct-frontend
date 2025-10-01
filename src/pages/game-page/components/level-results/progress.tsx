@@ -7,7 +7,7 @@ const Progress = () => {
 	const totalHappyClients = result.reviews.filter((e) => e.rating >= 7).length;
 	return (
 		<div className="p-4 border border-white/70 rounded-[0.75rem] bg-[#1F1FA2]">
-			<h3 className="font-halvar uppercase text-center mb-3">
+			<h3 className="font-halvar font-bold tracking-tight uppercase text-center mb-3">
 				Рабочий день завершен
 			</h3>
 			<div>

@@ -24,4 +24,12 @@ export type SituationDTO = {
 		};
 		is_correct: boolean;
 	}>;
+	hint: {
+		product: {
+			id: number;
+			name: string;
+			link: string;
+		};
+		text: string;
+	};
 };

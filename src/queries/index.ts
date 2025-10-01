@@ -4,7 +4,7 @@ import { v4 } from "uuid";
 import { acknowledgeDayFinish, getLevel } from "@/api/game";
 
 export const useGenerateLevel = () => {
-	const [seed] = useState("ba71f4e0-7b4a-4f85-83f3-bd5a1c328f4f");
+	const [seed] = useState(v4());
 	return useQuery({
 		queryKey: ["level", seed],
 		queryFn: () => {
