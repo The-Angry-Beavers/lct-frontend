@@ -1,5 +1,5 @@
 import type { SVGProps } from "react";
-import { buildImage } from "@/api";
+
 import type { SituationResult } from "@/shared/types";
 import { GoodStars } from "./assets/good-stars";
 import Stars from "./assets/stars";
@@ -156,7 +156,7 @@ const SituationCard = (props: { situation: SituationResult }) => {
 					<div className="relative w-[2.875rem] min-w-[2.875rem] rounded-[0.25rem] bg-[#6188E4] overflow-hidden aspect-square">
 						<img
 							className=" absolute left-0 top-0 bottom-0 right-0 object-cover scale-[120%]"
-							src={buildImage(client.sprite)}
+							src={client.sprite}
 							alt=""
 						/>
 					</div>

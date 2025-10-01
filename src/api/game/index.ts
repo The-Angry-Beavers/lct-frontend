@@ -1,6 +1,6 @@
 import type { SituationAnswer } from "@/context/level-context/lib";
 import type { Level } from "@/shared/types";
-import { baseURL, http } from "..";
+import { http } from "..";
 import type { SituationDTO } from "./dto";
 
 export const getSituation = async (args: {
@@ -12,7 +12,6 @@ export const getSituation = async (args: {
 		args,
 	);
 
-	response.data.client.sprite = baseURL + response.data.client.sprite;
 	return response.data;
 };
 

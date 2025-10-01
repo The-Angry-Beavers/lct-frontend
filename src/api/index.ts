@@ -3,10 +3,6 @@ import { v4 as uuidv4 } from "uuid";
 
 export const baseURL = import.meta.env.VITE_BACKEND_URL;
 
-export const buildImage = (path: string) => {
-	return baseURL + path;
-};
-
 export const seed = uuidv4();
 
 export const http = axios.create({
