@@ -78,13 +78,12 @@ const BearMessage = () => {
 
 	useEffect(() => {
 		const unsubscribe = emitter.on("onBearMessage", (data) => {
-			console.log(data);
 			setHidden(false);
 			setText(data.message);
 		});
 
 		return () => {
-			unsubscribe(); // очистка при размонтировании
+			unsubscribe();
 		};
 	}, [emitter]);
 

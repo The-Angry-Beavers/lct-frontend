@@ -15,14 +15,20 @@ export const getSituation = async (args: {
 	return response.data;
 };
 
-export const getLevel = async (seed: string): Promise<Level> => {
-	const CLIENT_COUNT = 10;
-
-	const situations = await Promise.all(
-		Array.from({ length: CLIENT_COUNT }, (_, i) =>
-			getSituation({ seed, num_iterations: i }),
-		),
+export const getSituationsChunk = async (args: {
+	seed: string;
+	total_iterations: number;
+}) => {
+	const response = await http.post<SituationDTO[]>(
+		"/api/game/generateChunkSituations",
+		args,
 	);
+
+	return response.data;
+};
+
+export const getLevel = async (seed: string): Promise<Level> => {
+	const situations = await getSituationsChunk({ seed, total_iterations: 10 });
 
 	return {
 		level_info: {
