@@ -2,318 +2,178 @@
 @font-face {
 	font-family: "Halvar Breitschrift";
 	src:
-		url("/fonts/halvar/Halvar Breitschrift-Hairline-Web.woff2") format("woff2"),
-		url("/fonts/halvar/Halvar Breitschrift-Hairline-Web.woff") format("woff"),
-		url("/fonts/halvar/Halvar Breitschrift-Hairline-Web.ttf") format("truetype");
+		url("fonts/halvar/Halvar Breitschrift-Hairline-Web.woff2") format("woff2"),
+		url("fonts/halvar/Halvar Breitschrift-Hairline-Web.woff") format("woff");
 	font-weight: 100;
 	font-style: normal;
 }
 @font-face {
 	font-family: "Halvar Breitschrift";
 	src:
-		url("/fonts/halvar/Halvar Breitschrift-Hairline Slanted-Web.woff2")
+		url("fonts/halvar/Halvar Breitschrift-Hairline Slanted-Web.woff2")
 		format("woff2"),
-		url("/fonts/halvar/Halvar Breitschrift-Hairline Slanted-Web.woff")
-		format("woff"),
-		url("/fonts/halvar/Halvar Breitschrift-Hairline Slanted-Web.ttf")
-		format("truetype");
+		url("fonts/halvar/Halvar Breitschrift-Hairline Slanted-Web.woff")
+		format("woff");
 	font-weight: 100;
 	font-style: italic;
-}
-/* SuperSlanted – отдельная family, т.к. это не просто italic */
-@font-face {
-	font-family: "Halvar Breitschrift SuperSlanted";
-	src:
-		url("/fonts/halvar/Halvar Breitschrift-Hairline SuperSlanted-Web.woff2")
-		format("woff2"),
-		url("/fonts/halvar/Halvar Breitschrift-Hairline SuperSlanted-Web.woff")
-		format("woff"),
-		url("/fonts/halvar/Halvar Breitschrift-Hairline SuperSlanted-Web.ttf")
-		format("truetype");
-	font-weight: 100;
-	font-style: oblique;
 }
 
 /* ExtraThin (200) */
 @font-face {
 	font-family: "Halvar Breitschrift";
 	src:
-		url("/fonts/halvar/Halvar Breitschrift-ExtraThin-Web.woff2") format("woff2"),
-		url("/fonts/halvar/Halvar Breitschrift-ExtraThin-Web.woff") format("woff"),
-		url("/fonts/halvar/Halvar Breitschrift-ExtraThin-Web.ttf")
-		format("truetype");
+		url("fonts/halvar/Halvar Breitschrift-ExtraThin-Web.woff2") format("woff2"),
+		url("fonts/halvar/Halvar Breitschrift-ExtraThin-Web.woff") format("woff");
 	font-weight: 200;
 	font-style: normal;
 }
 @font-face {
 	font-family: "Halvar Breitschrift";
 	src:
-		url("/fonts/halvar/Halvar Breitschrift-ExtraThin Slanted-Web.woff2")
+		url("fonts/halvar/Halvar Breitschrift-ExtraThin Slanted-Web.woff2")
 		format("woff2"),
-		url("/fonts/halvar/Halvar Breitschrift-ExtraThin Slanted-Web.woff")
-		format("woff"),
-		url("/fonts/halvar/Halvar Breitschrift-ExtraThin Slanted-Web.ttf")
-		format("truetype");
+		url("fonts/halvar/Halvar Breitschrift-ExtraThin Slanted-Web.woff")
+		format("woff");
 	font-weight: 200;
 	font-style: italic;
-}
-@font-face {
-	font-family: "Halvar Breitschrift SuperSlanted";
-	src:
-		url("/fonts/halvar/Halvar Breitschrift-ExtraThin SuperSlanted-Web.woff2")
-		format("woff2"),
-		url("/fonts/halvar/Halvar Breitschrift-ExtraThin SuperSlanted-Web.woff")
-		format("woff"),
-		url("/fonts/halvar/Halvar Breitschrift-ExtraThin SuperSlanted-Web.ttf")
-		format("truetype");
-	font-weight: 200;
-	font-style: oblique;
 }
 
 /* Thin (300) */
 @font-face {
 	font-family: "Halvar Breitschrift";
 	src:
-		url("/fonts/halvar/Halvar Breitschrift-Thin-Web.woff2") format("woff2"),
-		url("/fonts/halvar/Halvar Breitschrift-Thin-Web.woff") format("woff"),
-		url("/fonts/halvar/Halvar Breitschrift-Thin-Web.ttf") format("truetype");
+		url("fonts/halvar/Halvar Breitschrift-Thin-Web.woff2") format("woff2"),
+		url("fonts/halvar/Halvar Breitschrift-Thin-Web.woff") format("woff");
 	font-weight: 300;
 	font-style: normal;
 }
 @font-face {
 	font-family: "Halvar Breitschrift";
 	src:
-		url("/fonts/halvar/Halvar Breitschrift-Thin Slanted-Web.woff2")
+		url("fonts/halvar/Halvar Breitschrift-Thin Slanted-Web.woff2")
 		format("woff2"),
-		url("/fonts/halvar/Halvar Breitschrift-Thin Slanted-Web.woff")
-		format("woff"),
-		url("/fonts/halvar/Halvar Breitschrift-Thin Slanted-Web.ttf")
-		format("truetype");
+		url("fonts/halvar/Halvar Breitschrift-Thin Slanted-Web.woff") format("woff");
 	font-weight: 300;
 	font-style: italic;
-}
-@font-face {
-	font-family: "Halvar Breitschrift SuperSlanted";
-	src:
-		url("/fonts/halvar/Halvar Breitschrift-Thin SuperSlanted-Web.woff2")
-		format("woff2"),
-		url("/fonts/halvar/Halvar Breitschrift-Thin SuperSlanted-Web.woff")
-		format("woff"),
-		url("/fonts/halvar/Halvar Breitschrift-Thin SuperSlanted-Web.ttf")
-		format("truetype");
-	font-weight: 300;
-	font-style: oblique;
 }
 
 /* Light (400) */
 @font-face {
 	font-family: "Halvar Breitschrift";
 	src:
-		url("/fonts/halvar/Halvar Breitschrift-Light-Web.woff2") format("woff2"),
-		url("/fonts/halvar/Halvar Breitschrift-Light-Web.woff") format("woff"),
-		url("/fonts/halvar/Halvar Breitschrift-Light-Web.ttf") format("truetype");
+		url("fonts/halvar/Halvar Breitschrift-Light-Web.woff2") format("woff2"),
+		url("fonts/halvar/Halvar Breitschrift-Light-Web.woff") format("woff");
 	font-weight: 400;
 	font-style: normal;
 }
 @font-face {
 	font-family: "Halvar Breitschrift";
 	src:
-		url("/fonts/halvar/Halvar Breitschrift-Light Slanted-Web.woff2")
+		url("fonts/halvar/Halvar Breitschrift-Light Slanted-Web.woff2")
 		format("woff2"),
-		url("/fonts/halvar/Halvar Breitschrift-Light Slanted-Web.woff")
-		format("woff"),
-		url("/fonts/halvar/Halvar Breitschrift-Light Slanted-Web.ttf")
-		format("truetype");
+		url("fonts/halvar/Halvar Breitschrift-Light Slanted-Web.woff")
+		format("woff");
 	font-weight: 400;
 	font-style: italic;
-}
-@font-face {
-	font-family: "Halvar Breitschrift SuperSlanted";
-	src:
-		url("/fonts/halvar/Halvar Breitschrift-Light SuperSlanted-Web.woff2")
-		format("woff2"),
-		url("/fonts/halvar/Halvar Breitschrift-Light SuperSlanted-Web.woff")
-		format("woff"),
-		url("/fonts/halvar/Halvar Breitschrift-Light SuperSlanted-Web.ttf")
-		format("truetype");
-	font-weight: 400;
-	font-style: oblique;
 }
 
-/* Regular (500) */
+/* Regular (400) */
 @font-face {
 	font-family: "Halvar Breitschrift";
 	src:
-		url("/fonts/halvar/Halvar Breitschrift-Regular-Web.woff2") format("woff2"),
-		url("/fonts/halvar/Halvar Breitschrift-Regular-Web.woff") format("woff"),
-		url("/fonts/halvar/Halvar Breitschrift-Regular-Web.ttf") format("truetype");
-	font-weight: 500;
+		url("fonts/halvar/Halvar Breitschrift-Regular-Web.woff2") format("woff2"),
+		url("fonts/halvar/Halvar Breitschrift-Regular-Web.woff") format("woff");
+	font-weight: 400;
 	font-style: normal;
 }
 @font-face {
 	font-family: "Halvar Breitschrift";
 	src:
-		url("/fonts/halvar/Halvar Breitschrift-Regular Slanted-Web.woff2")
+		url("fonts/halvar/Halvar Breitschrift-Regular Slanted-Web.woff2")
 		format("woff2"),
-		url("/fonts/halvar/Halvar Breitschrift-Regular Slanted-Web.woff")
-		format("woff"),
-		url("/fonts/halvar/Halvar Breitschrift-Regular Slanted-Web.ttf")
-		format("truetype");
-	font-weight: 500;
+		url("fonts/halvar/Halvar Breitschrift-Regular Slanted-Web.woff")
+		format("woff");
+	font-weight: 400;
 	font-style: italic;
-}
-@font-face {
-	font-family: "Halvar Breitschrift SuperSlanted";
-	src:
-		url("/fonts/halvar/Halvar Breitschrift-Regular SuperSlanted-Web.woff2")
-		format("woff2"),
-		url("/fonts/halvar/Halvar Breitschrift-Regular SuperSlanted-Web.woff")
-		format("woff"),
-		url("/fonts/halvar/Halvar Breitschrift-Regular SuperSlanted-Web.ttf")
-		format("truetype");
-	font-weight: 500;
-	font-style: oblique;
 }
 
-/* Medium (600) */
+/* Medium (500) */
 @font-face {
 	font-family: "Halvar Breitschrift";
 	src:
-		url("/fonts/halvar/Halvar Breitschrift-Medium-Web.woff2") format("woff2"),
-		url("/fonts/halvar/Halvar Breitschrift-Medium-Web.woff") format("woff"),
-		url("/fonts/halvar/Halvar Breitschrift-Medium-Web.ttf") format("truetype");
-	font-weight: 600;
+		url("fonts/halvar/Halvar Breitschrift-Medium-Web.woff2") format("woff2"),
+		url("fonts/halvar/Halvar Breitschrift-Medium-Web.woff") format("woff");
+	font-weight: 500;
 	font-style: normal;
 }
 @font-face {
 	font-family: "Halvar Breitschrift";
 	src:
-		url("/fonts/halvar/Halvar Breitschrift-Medium Slanted-Web.woff2")
+		url("fonts/halvar/Halvar Breitschrift-Medium Slanted-Web.woff2")
 		format("woff2"),
-		url("/fonts/halvar/Halvar Breitschrift-Medium Slanted-Web.woff")
-		format("woff"),
-		url("/fonts/halvar/Halvar Breitschrift-Medium Slanted-Web.ttf")
-		format("truetype");
-	font-weight: 600;
+		url("fonts/halvar/Halvar Breitschrift-Medium Slanted-Web.woff")
+		format("woff");
+	font-weight: 500;
 	font-style: italic;
-}
-@font-face {
-	font-family: "Halvar Breitschrift SuperSlanted";
-	src:
-		url("/fonts/halvar/Halvar Breitschrift-Medium SuperSlanted-Web.woff2")
-		format("woff2"),
-		url("/fonts/halvar/Halvar Breitschrift-Medium SuperSlanted-Web.woff")
-		format("woff"),
-		url("/fonts/halvar/Halvar Breitschrift-Medium SuperSlanted-Web.ttf")
-		format("truetype");
-	font-weight: 600;
-	font-style: oblique;
 }
 
 /* Bold (700) */
 @font-face {
 	font-family: "Halvar Breitschrift";
 	src:
-		url("/fonts/halvar/Halvar Breitschrift-Bold-Web.woff2") format("woff2"),
-		url("/fonts/halvar/Halvar Breitschrift-Bold-Web.woff") format("woff"),
-		url("/fonts/halvar/Halvar Breitschrift-Bold-Web.ttf") format("truetype");
+		url("fonts/halvar/Halvar Breitschrift-Bold-Web.woff2") format("woff2"),
+		url("fonts/halvar/Halvar Breitschrift-Bold-Web.woff") format("woff");
 	font-weight: 700;
 	font-style: normal;
 }
 @font-face {
 	font-family: "Halvar Breitschrift";
 	src:
-		url("/fonts/halvar/Halvar Breitschrift-Bold Slanted-Web.woff2")
+		url("fonts/halvar/Halvar Breitschrift-Bold Slanted-Web.woff2")
 		format("woff2"),
-		url("/fonts/halvar/Halvar Breitschrift-Bold Slanted-Web.woff")
-		format("woff"),
-		url("/fonts/halvar/Halvar Breitschrift-Bold Slanted-Web.ttf")
-		format("truetype");
+		url("fonts/halvar/Halvar Breitschrift-Bold Slanted-Web.woff") format("woff");
 	font-weight: 700;
 	font-style: italic;
-}
-@font-face {
-	font-family: "Halvar Breitschrift SuperSlanted";
-	src:
-		url("/fonts/halvar/Halvar Breitschrift-Bold SuperSlanted-Web.woff2")
-		format("woff2"),
-		url("/fonts/halvar/Halvar Breitschrift-Bold SuperSlanted-Web.woff")
-		format("woff"),
-		url("/fonts/halvar/Halvar Breitschrift-Bold SuperSlanted-Web.ttf")
-		format("truetype");
-	font-weight: 700;
-	font-style: oblique;
 }
 
 /* ExtraBold (800) */
 @font-face {
 	font-family: "Halvar Breitschrift";
 	src:
-		url("/fonts/halvar/Halvar Breitschrift-ExtraBold-Web.woff2") format("woff2"),
-		url("/fonts/halvar/Halvar Breitschrift-ExtraBold-Web.woff") format("woff"),
-		url("/fonts/halvar/Halvar Breitschrift-ExtraBold-Web.ttf")
-		format("truetype");
+		url("fonts/halvar/Halvar Breitschrift-ExtraBold-Web.woff2") format("woff2"),
+		url("fonts/halvar/Halvar Breitschrift-ExtraBold-Web.woff") format("woff");
 	font-weight: 800;
 	font-style: normal;
 }
 @font-face {
 	font-family: "Halvar Breitschrift";
 	src:
-		url("/fonts/halvar/Halvar Breitschrift-ExtraBold Slanted-Web.woff2")
+		url("fonts/halvar/Halvar Breitschrift-ExtraBold Slanted-Web.woff2")
 		format("woff2"),
-		url("/fonts/halvar/Halvar Breitschrift-ExtraBold Slanted-Web.woff")
-		format("woff"),
-		url("/fonts/halvar/Halvar Breitschrift-ExtraBold Slanted-Web.ttf")
-		format("truetype");
+		url("fonts/halvar/Halvar Breitschrift-ExtraBold Slanted-Web.woff")
+		format("woff");
 	font-weight: 800;
 	font-style: italic;
-}
-@font-face {
-	font-family: "Halvar Breitschrift SuperSlanted";
-	src:
-		url("/fonts/halvar/Halvar Breitschrift-ExtraBold SuperSlanted-Web.woff2")
-		format("woff2"),
-		url("/fonts/halvar/Halvar Breitschrift-ExtraBold SuperSlanted-Web.woff")
-		format("woff"),
-		url("/fonts/halvar/Halvar Breitschrift-ExtraBold SuperSlanted-Web.ttf")
-		format("truetype");
-	font-weight: 800;
-	font-style: oblique;
 }
 
 /* Black (900) */
 @font-face {
 	font-family: "Halvar Breitschrift";
 	src:
-		url("/fonts/halvar/Halvar Breitschrift-Black-Web.woff2") format("woff2"),
-		url("/fonts/halvar/Halvar Breitschrift-Black-Web.woff") format("woff"),
-		url("/fonts/halvar/Halvar Breitschrift-Black-Web.ttf") format("truetype");
+		url("fonts/halvar/Halvar Breitschrift-Black-Web.woff2") format("woff2"),
+		url("fonts/halvar/Halvar Breitschrift-Black-Web.woff") format("woff");
 	font-weight: 900;
 	font-style: normal;
 }
 @font-face {
 	font-family: "Halvar Breitschrift";
 	src:
-		url("/fonts/halvar/Halvar Breitschrift-Black Slanted-Web.woff2")
+		url("fonts/halvar/Halvar Breitschrift-Black Slanted-Web.woff2")
 		format("woff2"),
-		url("/fonts/halvar/Halvar Breitschrift-Black Slanted-Web.woff")
-		format("woff"),
-		url("/fonts/halvar/Halvar Breitschrift-Black Slanted-Web.ttf")
-		format("truetype");
+		url("fonts/halvar/Halvar Breitschrift-Black Slanted-Web.woff")
+		format("woff");
 	font-weight: 900;
 	font-style: italic;
-}
-@font-face {
-	font-family: "Halvar Breitschrift SuperSlanted";
-	src:
-		url("/fonts/halvar/Halvar Breitschrift-Black SuperSlanted-Web.woff2")
-		format("woff2"),
-		url("/fonts/halvar/Halvar Breitschrift-Black SuperSlanted-Web.woff")
-		format("woff"),
-		url("/fonts/halvar/Halvar Breitschrift-Black SuperSlanted-Web.ttf")
-		format("truetype");
-	font-weight: 900;
-	font-style: oblique;
 }
 
 @font-face {

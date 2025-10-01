@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "motion/react";
-import { useEffect, useState } from "react";
+import { type ReactNode, useEffect, useState } from "react";
 import { LevelProvider, useLevelContext } from "@/context/level-context";
 import {
 	SituationProvider,
@@ -16,7 +16,13 @@ import Phone from "../phone";
 import QuestionnaireModal from "../questionnaire/questionnaire-modal";
 import TableQuestionnaire from "../questionnaire/table-questionnaire";
 
-const Typewriter = ({ text, speed = 50 }: { text: string; speed?: number }) => {
+export const Typewriter = ({
+	text,
+	speed = 50,
+}: {
+	text: string;
+	speed?: number;
+}) => {
 	const [index, setIndex] = useState(0);
 	const { play, stop } = useMusicPlayer();
 

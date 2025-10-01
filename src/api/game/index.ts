@@ -37,8 +37,11 @@ export const getLevel = async (seed: string): Promise<Level> => {
 	};
 };
 
-export const getHint = async () => {
-	const response = await http.post("/api/game/getHint");
+export const getHint = async (seed: string, num_iterations: number) => {
+	const response = await http.post("/api/game/getHint", {
+		seed,
+		num_iterations,
+	});
 	return response.data;
 };
 

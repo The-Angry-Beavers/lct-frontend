@@ -4,11 +4,9 @@ export default {
 	theme: {
 		extend: {
 			fontFamily: {
-				sans: ["Gazprombank Sans", "sans-serif"],
-				superslanted: ["Halvar Breitschrift SuperSlanted", "sans-serif"],
-				halvarSuper: ["Halvar Breitschrift SuperSlanted", "sans-serif"],
-				halvar: ["Halvar Breitschrift", "sans-serif"],
-				gzbank: ["Gazprombank Sans", "sans-serif"],
+				sans: ["Gazprombank Sans", "cursive"],
+				halvar: ["Halvar Breitschrift", "cursive"],
+				gzbank: ["Gazprombank Sans", "cursive"],
 			},
 		},
 	},
