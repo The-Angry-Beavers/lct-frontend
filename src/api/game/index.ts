@@ -29,6 +29,7 @@ export const getLevel = async (seed: string): Promise<Level> => {
 			seed: seed,
 		},
 		situations: situations.map((e, index) => ({
+			hint: e.hint,
 			index: index,
 			client: e.client,
 			answers: e.answers,

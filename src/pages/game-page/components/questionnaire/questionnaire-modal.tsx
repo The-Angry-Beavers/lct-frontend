@@ -1,7 +1,7 @@
 import QuestionnaireBooklet from "@shared/assets/questionnaire_booklet.png";
 import { AnimatePresence, motion } from "motion/react";
 import { label } from "motion/react-client";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { useLevelContext } from "@/context/level-context";
 import { useSituationContext } from "@/context/situation-context";
 import CheckboxGroup from "@/shared/ui/checkbox";
@@ -102,6 +102,10 @@ const QuestionnaireModal = () => {
 	const { questionnaireIsOpen: open, setQuestionnaireIsOpen: setOpen } =
 		useSituationContext();
 
+	const age = useMemo(() => {
+		return generateAge(client.age as "YOUNG" | "MIDDLE" | "OLD");
+	}, [currentSituationIndex]);
+
 	return (
 		<AnimatePresence mode="popLayout">
 			{open && (
@@ -160,9 +164,7 @@ const QuestionnaireModal = () => {
 								<span className="font-gzbank font-light text-[#DFE1EE] text-xs">
 									Возраст
 								</span>
-								<p className="font-gzbank font-semibold">
-									{generateAge(client.age as "YOUNG" | "MIDDLE" | "OLD")}
-								</p>
+								<p className="font-gzbank font-semibold">{age}</p>
 								<hr className="border-white/20 my-2" />
 								<span className="font-gzbank font-light text-[#DFE1EE] text-xs">
 									Сфера работы
