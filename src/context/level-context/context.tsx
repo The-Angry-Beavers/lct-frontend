@@ -83,8 +83,8 @@ const LevelProvider = (props: LevelProviderProps) => {
 		currentSituationIndex,
 		currentSituation,
 		situations,
-		result: mock_result as any as LevelResult,
-		// result: data,
+		// result: mock_result as any as LevelResult,
+		result: data,
 	};
 
 	return (
