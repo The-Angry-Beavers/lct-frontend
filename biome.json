@@ -18,7 +18,8 @@
 			"recommended": true,
 			"suspicious": {
 				"noUnknownAtRules": "warn",
-				"useIterableCallbackReturn": "warn"
+				"useIterableCallbackReturn": "warn",
+				"noArrayIndexKey": "off"
 			},
 			"style": {
 				"noNonNullAssertion": "warn"

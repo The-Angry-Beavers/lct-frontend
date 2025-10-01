@@ -21,7 +21,7 @@ export const getLevel = async (seed: string): Promise<Level> => {
 
 	const situations = await Promise.all(
 		Array.from({ length: CLIENT_COUNT }, (_, i) =>
-			getSituation({ seed, num_iterations: i + 100 }),
+			getSituation({ seed, num_iterations: i }),
 		),
 	);
 

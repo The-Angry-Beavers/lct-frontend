@@ -1,8 +1,9 @@
 import { type ReactNode, useEffect, useMemo, useState } from "react";
 import { useEvents } from "@/packages/emitter";
 import { useCalcLevelResults } from "@/queries";
-import type { Level, Situation } from "@/shared/types";
+import type { Level, LevelResult, Situation } from "@/shared/types";
 import { LevelContext, type SituationAnswer } from "./lib";
+import { mock_result } from "./mock-result";
 
 type LevelProviderProps = {
 	level: Level;
@@ -82,6 +83,8 @@ const LevelProvider = (props: LevelProviderProps) => {
 		currentSituationIndex,
 		currentSituation,
 		situations,
+		result: mock_result as any as LevelResult,
+		// result: data,
 	};
 
 	return (

@@ -1,4 +1,3 @@
-import MuteButton from "@/shared/components/mute-button";
 import PageContainer from "@/shared/ui/page-container";
 import GameField from "./components/game-field";
 

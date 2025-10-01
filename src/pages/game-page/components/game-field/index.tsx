@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "motion/react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { LevelProvider, useLevelContext } from "@/context/level-context";
 import {
 	SituationProvider,
@@ -11,6 +11,7 @@ import { useGenerateLevel } from "@/queries";
 import BackgroundImg from "@/shared/assets/bg.png?url";
 import DeskImg from "@/shared/assets/desk.png?url";
 import MuteButton from "@/shared/components/mute-button";
+import LevelResults from "../level-results";
 import Phone from "../phone";
 import QuestionnaireModal from "../questionnaire/questionnaire-modal";
 import TableQuestionnaire from "../questionnaire/table-questionnaire";
@@ -63,7 +64,7 @@ const Table = () => {
 
 const Background = () => {
 	return (
-		<div className="absolute left-0 bg-slate-50 top-0 right-0 bottom-0">
+		<div className="absolute left-0 top-0 right-0 bottom-0 bg-[#BED1FB]">
 			<img
 				className="top-0 absolute w-full h-[calc(100%-12rem)] bottom-0 right-0 left-0 object-cover object-left"
 				src={BackgroundImg}
@@ -204,6 +205,7 @@ const GameField = () => {
 				</div>
 				<QuestionnaireModal />
 			</SituationProvider>
+			<LevelResults />
 		</LevelProvider>
 	);
 };

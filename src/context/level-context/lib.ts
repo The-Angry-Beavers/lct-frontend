@@ -1,5 +1,5 @@
 import { createContext, useContext } from "react";
-import type { Level, Situation } from "@/shared/types";
+import type { Level, LevelResult, Situation } from "@/shared/types";
 
 export type SituationAnswer = {
 	situationIndex: number;
@@ -14,6 +14,7 @@ export type ILevelContext = {
 	currentSituationIndex: number;
 	currentSituation: Situation;
 	situations: Situation[];
+	result: LevelResult | null;
 };
 
 export const LevelContext = createContext<ILevelContext | null>(null);

@@ -21,8 +21,6 @@ export type Product = {
 export type Answer = {
 	product: Product;
 	is_correct: boolean;
-	correct_but_not_selected_msg: string;
-	incorect_but_selected_msg: string;
 };
 
 export type Situation = {
@@ -47,8 +45,11 @@ export type SituationResult = {
 			| "correct_but_not_selected"
 			| "full_correct";
 		review: string;
-	};
+	}[];
 	rating: number;
 };
 
-export type LevelResult = SituationResult[];
+export type LevelResult = {
+	reviews: SituationResult[];
+	total_rating: number;
+};
