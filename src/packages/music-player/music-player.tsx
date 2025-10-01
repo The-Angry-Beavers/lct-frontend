@@ -11,11 +11,12 @@ export const MusicPlayerProvider = ({ children }: { children: ReactNode }) => {
 	const audioRefs = useRef<Record<TrackName, HTMLAudioElement>>({
 		background: Object.assign(new Audio(tracks.background), { loop: true }),
 		ring: Object.assign(new Audio(tracks.ring), { loop: true }),
+		chatter: Object.assign(new Audio(tracks.chatter), { loop: true }),
 		// click: new Audio(tracks.click),
 		// success: new Audio(tracks.success),
 	});
 
-	const [muted, setMuted] = useState(false); // состояние "все звуки выкл/вкл"
+	const [muted, setMuted] = useState(true); // состояние "все звуки выкл/вкл"
 
 	// Инициализация аудио (Safari автоплей)
 	const init = async () => {

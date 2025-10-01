@@ -12,12 +12,14 @@ export type Client = {
 	sprite: string;
 };
 
+export type Product = {
+	id: number;
+	name: string;
+	link: string;
+};
+
 export type Answer = {
-	product: {
-		id: number;
-		name: string;
-		link: string;
-	};
+	product: Product;
 	is_correct: boolean;
 	correct_but_not_selected_msg: string;
 	incorect_but_selected_msg: string;
@@ -35,3 +37,18 @@ export type Level = {
 	};
 	situations: Situation[];
 };
+
+export type SituationResult = {
+	client: Client;
+	review: {
+		answered_product: Product;
+		answer_status:
+			| "incorrect_but_selected"
+			| "correct_but_not_selected"
+			| "full_correct";
+		review: string;
+	};
+	rating: number;
+};
+
+export type LevelResult = SituationResult[];

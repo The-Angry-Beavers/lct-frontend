@@ -6,6 +6,7 @@ import {
 	useSituationContext,
 } from "@/context/situation-context";
 import { useEvents } from "@/packages/emitter";
+import { useMusicPlayer } from "@/packages/music-player";
 import { useGenerateLevel } from "@/queries";
 import BackgroundImg from "@/shared/assets/bg.png?url";
 import DeskImg from "@/shared/assets/desk.png?url";
@@ -16,21 +17,18 @@ import TableQuestionnaire from "../questionnaire/table-questionnaire";
 
 const Typewriter = ({ text, speed = 50 }: { text: string; speed?: number }) => {
 	const [index, setIndex] = useState(0);
-	const audioRef = useRef<HTMLAudioElement | null>(null);
+	const { play, stop } = useMusicPlayer();
 
-  useEffect(() => {
-    setIndex(0);
+	useEffect(() => {
+		setIndex(0);
 
-		if (audioRef.current) {
-			audioRef.current.currentTime = 0;
-			audioRef.current.play().catch(() => {});
-		}
+		play("chatter");
 
 		const interval = setInterval(() => {
 			setIndex((prev) => {
 				if (prev >= text.length) {
 					clearInterval(interval);
-					if (audioRef.current) audioRef.current.pause();
+					stop("chatter");
 					return prev;
 				}
 				return prev + 1;
@@ -39,16 +37,15 @@ const Typewriter = ({ text, speed = 50 }: { text: string; speed?: number }) => {
 
 		return () => {
 			clearInterval(interval);
-			if (audioRef.current) audioRef.current.pause();
+			stop("chatter");
 		};
 	}, [text, speed]);
 
-  return (
-    <motion.span key={text} initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-      {text.slice(0, index)}
-	  <audio ref={audioRef} src="/sounds/chatter.mp3" preload="auto" autoPlay />
-    </motion.span>
-  );
+	return (
+		<motion.span key={text} initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+			{text.slice(0, index)}
+		</motion.span>
+	);
 };
 
 const Table = () => {
@@ -96,30 +93,30 @@ const ClientMessage = () => {
 		};
 	}, [emitter]);
 
-  return (
-    <AnimatePresence mode="popLayout">
-      {!hidden && (
-        <motion.div
-        //  onClick={() => {
-        //    setHidden(true);
-        //  }}
-          exit={{ x: "100vw" }}
-          initial={{ x: "100vw" }}
-          animate={{ x: 0 }}
-          className="absolute w-[19.375rem] right-[1rem] bottom-[calc(12rem+8rem)]"
-        >
-          <div className="bg-white translate-y-[100%] rounded-[1rem] border-2 border-black">
-            <div className="text-black px-4 py-2">
-              <Typewriter text={client.message} speed={35} />
-            </div>
-            <div className="absolute left-[2rem] top-[-1.25rem] rounded-full px-2 py-[0.0625rem] border-2 border-white bg-[#1919EF]">
-              {client.first_name}
-            </div>
-          </div>
-        </motion.div>
-      )}
-    </AnimatePresence>
-  );
+	return (
+		<AnimatePresence mode="popLayout">
+			{!hidden && (
+				<motion.div
+					//  onClick={() => {
+					//    setHidden(true);
+					//  }}
+					exit={{ x: "100vw" }}
+					initial={{ x: "100vw" }}
+					animate={{ x: 0 }}
+					className="absolute w-[19.375rem] right-[1rem] bottom-[calc(12rem+8rem)]"
+				>
+					<div className="bg-white translate-y-[100%] rounded-[1rem] border-2 border-black">
+						<div className="text-black px-4 py-2">
+							<Typewriter text={client.message} speed={35} />
+						</div>
+						<div className="absolute left-[2rem] top-[-1.25rem] rounded-full px-2 py-[0.0625rem] border-2 border-white bg-[#1919EF]">
+							{client.first_name}
+						</div>
+					</div>
+				</motion.div>
+			)}
+		</AnimatePresence>
+	);
 };
 
 const Client = () => {

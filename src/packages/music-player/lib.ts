@@ -1,6 +1,7 @@
 // Импортируем звуки
 import { createContext, useContext } from "react";
 import background from "./assets/background.mp3?url";
+import chatter from "./assets/chatter.mp3?url";
 import ring from "./assets/ring.mp3?url";
 // import success from "./success.mp3?url";
 
@@ -8,6 +9,7 @@ import ring from "./assets/ring.mp3?url";
 export const tracks = {
 	background,
 	ring,
+	chatter,
 } as const;
 
 export type TrackName = keyof typeof tracks;
