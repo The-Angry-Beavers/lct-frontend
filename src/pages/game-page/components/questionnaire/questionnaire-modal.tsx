@@ -168,7 +168,13 @@ const QuestionnaireModal = () => {
 								Cемейное положение
 							</span>
 							<p className="font-gzbank font-medium mb-2">
-								{client.is_married ? "есть" : "нет"}
+								{client.is_married
+									? client.gender === "male"
+										? "Женат"
+										: "Замужен"
+									: client.gender === "male"
+										? "Холост"
+										: "Не замужен"}
 							</p>
 							<span className="font-gzbank font-light text-[#DFE1EE] text-xs">
 								Жилье
