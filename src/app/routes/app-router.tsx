@@ -5,17 +5,13 @@ import OnboardingPage from "@/pages/onboarding-page";
 import PrizesPage from "@/pages/prizes-page";
 import RulesPage from "@/pages/rules-page";
 import StartPage from "@/pages/start-page";
-import MetrikaInit from "./metrika";
 
 const router = createBrowserRouter([
 	{
 		element: (
-			<>
-				<MetrikaInit />
-				<PrizesProvider>
-					<Outlet />
-				</PrizesProvider>
-			</>
+			<PrizesProvider>
+				<Outlet />
+			</PrizesProvider>
 		),
 		children: [
 			{
