@@ -167,17 +167,23 @@ const QuestionnaireModal = () => {
 							<span className="font-gzbank font-light text-[#DFE1EE] text-xs">
 								Cемейное положение
 							</span>
-							<p className="font-gzbank font-medium mb-2">Холост</p>
+							<p className="font-gzbank font-medium mb-2">
+								{client.is_married ? "есть" : "нет"}
+							</p>
 							<span className="font-gzbank font-light text-[#DFE1EE] text-xs">
 								Жилье
 							</span>
-							<p className="font-gzbank font-medium">нет</p>
+							<p className="font-gzbank font-medium">
+								{client.is_have_real_estate ? "есть" : "нет"}
+							</p>
 						</div>
 						<div>
 							<span className="font-gzbank font-light text-[#DFE1EE] text-xs">
 								Дети
 							</span>
-							<p className="font-gzbank font-medium mb-2">нет</p>
+							<p className="font-gzbank font-medium mb-2">
+								{client.is_have_child ? "есть" : "нет"}
+							</p>
 
 							<span className="font-gzbank font-light text-[#DFE1EE] text-xs">
 								Место жительства
