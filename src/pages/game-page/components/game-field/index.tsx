@@ -24,11 +24,11 @@ const JumpingText = ({ text }: { text: string }) => {
 			{text.split("").map((char, index) => (
 				<motion.span
 					key={index}
-					animate={{ y: [0, -10, 0] }}
+					animate={{ y: [0, -4, 0] }}
 					transition={{
 						repeat: Infinity,
 						repeatType: "loop",
-						duration: 2,
+						duration: 1,
 						delay: index * 0.5,
 					}}
 				>
@@ -47,28 +47,26 @@ export const Typewriter = ({
 	speed?: number;
 }) => {
 	const [index, setIndex] = useState(0);
+	const [currentSpeed, setCurrentSpeed] = useState(speed);
 
 	useEffect(() => {
-		setIndex(0);
+    	setIndex(0);
+	}, [text]);
+
+	useEffect(() => {
+		if (index >= text.length) return;
 
 		const interval = setInterval(() => {
-			setIndex((prev) => {
-				if (prev >= text.length) {
-					clearInterval(interval);
-
-					return prev;
-				}
-				return prev + 1;
-			});
-		}, speed);
+			setIndex((prev) => Math.min(prev + 1, text.length));
+		}, currentSpeed);
 
 		return () => {
 			clearInterval(interval);
 		};
-	}, [text, speed]);
+	}, [index, text.length, currentSpeed]);
 
 	return (
-		<motion.span key={text} initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+		<motion.span key={text} initial={{ opacity: 0 }} animate={{ opacity: 1 }} onClick={() => setCurrentSpeed(5)}>
 			{text.slice(0, index)}
 		</motion.span>
 	);
@@ -214,9 +212,9 @@ const GameField = () => {
 	if (isLoading || !data) {
 		return (
 			<div className="flex h-full items-center justify-center grow">
-				<div className="w-60 flex justify-center flex-col items-center text-3xl font-halvar">
+				<div className="w-60 flex justify-center flex-col items-center text-2xl font-halvar gap-4">
 					<Lottie animationData={loader} loop={true} />
-					<JumpingText text="Загрузка..." />
+					<JumpingText text="Летим к мечте..." />
 				</div>
 			</div>
 		);
