@@ -6,6 +6,14 @@ import Dialog from "@/shared/ui/dialog";
 import sadBeer from "./assets/sad-beer.webp?url";
 import { availablePrizes, type Prize, PrizesContext, usePrizes } from "./lib";
 
+const preloadImages = (urls: string[]) => {
+	urls.forEach((url) => {
+		console.log(url);
+		const img = new Image();
+		img.src = url;
+	});
+};
+
 const CloseButton = () => {
 	return (
 		<svg
@@ -162,6 +170,15 @@ const PrizeModal = () => {
 	);
 };
 
+const PreloadImage = () => {
+	const { prizes } = usePrizes();
+	useEffect(() => {
+		preloadImages(prizes.map((e) => e.img));
+	}, []);
+
+	return <></>;
+};
+
 export const PrizesProvider = ({ children }: { children: ReactNode }) => {
 	const [prizes, setPrizes] = useState<Prize[]>([]);
 
@@ -171,6 +188,7 @@ export const PrizesProvider = ({ children }: { children: ReactNode }) => {
 
 	return (
 		<PrizesContext.Provider value={{ prizes, addPrize, availablePrizes }}>
+			<PreloadImage />
 			{children}
 			<PrizeModal />
 		</PrizesContext.Provider>
