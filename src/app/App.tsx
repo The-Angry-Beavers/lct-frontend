@@ -2,6 +2,7 @@ import "./App.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { RouterProvider } from "react-router";
 import router from "@/app/routes/app-router";
+import { PrizesProvider } from "@/context/prizes-context/context";
 import { MusicPlayerProvider } from "@/packages/music-player";
 import BaseLayout from "./layouts/base-layout";
 
