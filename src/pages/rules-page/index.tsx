@@ -46,14 +46,14 @@ const RulesPage = () => {
 						<div className="rounded-full bg-[#3434B4] flex items-center justify-center w-6 h-6">
 							1
 						</div>
-						Изучите запрос клиента
+						Выслушайте клиента
 					</h4>
 					<p className="text-xs mt-1 pl-8">
 						Каждый игровой день к вам будут приходить клиенты со своими
 						историями и целями. Внимательно выслушайте их запрос — часто самое
 						важное кроется в деталях.
 					</p>
-					<img alt="" src={mockSpeech} className="px-8" />
+					<img src={mockSpeech} alt="" className="px-8" />
 				</div>
 				<hr className="my-4 border border-white/20" />
 				<div className="">
@@ -68,7 +68,7 @@ const RulesPage = () => {
 						информацию.
 					</p>
 					<div className="rounded-2xl bg-[#050581] pt-2 mt-2">
-						<img alt="" src={questionnaireBooklet} className="h-14 mx-auto" />
+						<img src={questionnaireBooklet} alt="" className="h-14 mx-auto" />
 					</div>
 				</div>
 				<hr className="my-4 border border-white/20" />
@@ -77,7 +77,7 @@ const RulesPage = () => {
 						<div className="rounded-full bg-[#3434B4] flex items-center justify-center w-6 h-6">
 							3
 						</div>
-						Выберите продукт(-ы)
+						Порекомендуйте продукты
 					</h4>
 					<p className="text-xs mt-1 px-8">
 						Внизу анкеты вы увидите список из 4-х продуктов Газпромбанка.
@@ -100,14 +100,14 @@ const RulesPage = () => {
 						<div className="rounded-full bg-[#3434B4] flex items-center justify-center w-6 h-6">
 							4
 						</div>
-						Результаты
+						Почитайте отзывы
 					</h4>
 					<p className="text-xs mt-1 px-8">
 						В конце дня вы получите оценку и отзывы от клиентов: они помогут вам
 						лучше разбираться в продуктах Газпромбанка. И помните, вы всегда
 						можете попросить совета Директора по мечтам! Просто позвоните ему!
 					</p>
-					<img alt="" src={phoneIdle} className="w-40 mx-auto" />
+					<img src={phoneIdle} alt="" className="w-40 mx-auto" />
 				</div>
 				<Link
 					to="/"

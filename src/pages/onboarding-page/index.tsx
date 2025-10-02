@@ -32,7 +32,7 @@ const OnboardingPage = () => {
 								<div className="rounded-full bg-[#3434B4] flex items-center justify-center w-6 h-6">
 									1
 								</div>
-								Изучите запрос клиента
+								Выслушайте клиента
 							</h4>
 							<p className="text-xs mt-1 pl-8">
 								Каждый игровой день к вам будут приходить клиенты со своими
@@ -67,7 +67,7 @@ const OnboardingPage = () => {
 								<div className="rounded-full bg-[#3434B4] flex items-center justify-center w-6 h-6">
 									3
 								</div>
-								Выберите продукт(-ы)
+								Порекомендуйте продукты
 							</h4>
 							<p className="text-xs mt-1 px-8">
 								Внизу анкеты вы увидите список из 4-х продуктов Газпромбанка.
