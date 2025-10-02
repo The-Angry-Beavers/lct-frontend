@@ -1,4 +1,4 @@
-import Logo from "@shared/assets/logo.png";
+import Logo from "@shared/assets/logo.webp";
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router";
@@ -11,19 +11,10 @@ import PageContainer from "@/shared/ui/page-container";
 const StartPage = () => {
 	const navigate = useNavigate();
 
-	const [completedOnboarding, setCompletedOnboarding] = useState(false);
-	const { play } = useMusicPlayer();
-
-	useEffect(() => {
-		const completed_onboarding = localStorage.getItem("completed_onboarding");
-		if (completed_onboarding) {
-			setCompletedOnboarding(true);
-		}
-	}, [localStorage]);
+	const [completedOnboarding] = useState(false);
 
 	const animation = useTapAnimation();
 
-	//  localStorage.clear()
 	return (
 		<PageContainer className="relative">
 			<img

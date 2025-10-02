@@ -1,4 +1,3 @@
-import QuestionnaireBooklet from "@shared/assets/questionnaire_booklet.png";
 import { AnimatePresence, motion } from "motion/react";
 import { label } from "motion/react-client";
 import { useMemo, useState } from "react";
@@ -77,7 +76,7 @@ const Questions = () => {
 					type="button"
 					className="bg-white w-full text-[#060698] rounded-2xl px-4 py-3"
 				>
-					Порекомендовать
+					{situation.index === 9 ? "Завершить день" : "Порекомендовать"}
 				</button>
 			</div>
 		</>

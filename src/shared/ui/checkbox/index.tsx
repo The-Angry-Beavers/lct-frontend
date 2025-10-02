@@ -87,7 +87,7 @@ const CheckboxGroup = forwardRef<HTMLDivElement, CheckboxGroupProps>(
 								{/* кастомный чекбокс */}
 								<div
 									className={classNames(
-										"w-5 h-5 rounded border flex items-center justify-center transition-colors",
+										"min-h-5 min-w-5 w-5 h-5 rounded border flex items-center justify-center transition-colors",
 										checked ? "bg-white border-white" : "border-white/50",
 										error ? "border-red-500" : "",
 									)}

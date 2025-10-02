@@ -1,7 +1,7 @@
 import bgImage from "@shared/assets/background.webp?url";
-import Bear from "@shared/assets/bear.png";
-import mockSpeech from "@shared/assets/mock-speech.png";
-import questionnaireBooklet from "@shared/assets/questionnaire_booklet.png";
+import Bear from "@shared/assets/bear.webp";
+import mockSpeech from "@shared/assets/mock-speech.webp";
+import questionnaireBooklet from "@shared/assets/questionnaire_booklet.webp";
 import classNames from "classnames";
 import { motion } from "motion/react";
 import { useState } from "react";
@@ -87,20 +87,29 @@ const OnboardingPage = () => {
 					</div>
 				</div>
 			)}
-			{step !== 2 && <img alt="" src={Bear} className="mt-auto z-[0]" />}
-			<motion.div
-				exit={{ x: "100vw" }}
-				initial={{ x: "100vw" }}
-				animate={{ x: 0 }}
-				className="absolute w-[19.375rem] right-[1rem] bottom-[calc(12rem+8rem)]"
-			>
-				<div className="bg-white translate-y-[100%] rounded-[1rem] border-2 border-black">
-					<div className="text-black px-4 py-2">{texts[step - 1]}</div>
-					<div className="absolute left-[2rem] top-[-1.25rem] rounded-full px-2 py-[0.0625rem] border-2 border-white bg-[#1919EF]">
-						Директор по мечтам
+			{step !== 2 && (
+				<img
+					alt=""
+					src={Bear}
+					className="mt-auto z-[0] w-[100vw] object-contain"
+				/>
+			)}
+			{step !== 2 && (
+				<motion.div
+					exit={{ x: "100vw" }}
+					initial={{ x: "100vw" }}
+					animate={{ x: 0 }}
+					className="absolute w-[19.375rem] right-[1rem] bottom-[calc(12rem+8rem)]"
+				>
+					<div className="bg-white translate-y-[100%] rounded-[1rem] border-2 border-black">
+						<div className="text-black px-4 py-2">{texts[step - 1]}</div>
+						<div className="absolute left-[2rem] top-[-1.25rem] rounded-full px-2 py-[0.0625rem] border-2 border-white bg-[#1919EF]">
+							Директор по мечтам
+						</div>
 					</div>
-				</div>
-			</motion.div>
+				</motion.div>
+			)}
+
 			<div className="absolute bottom-[1rem] w-full flex justify-around gap-4 px-4">
 				{step === 1 && (
 					<Link

@@ -10,9 +10,10 @@ import {
 import { useEvents } from "@/packages/emitter";
 import { useMusicPlayer } from "@/packages/music-player";
 import { useGenerateLevel } from "@/queries";
-import BackgroundImg from "@/shared/assets/bg.png?url";
-import DeskImg from "@/shared/assets/desk.png?url";
+import BackgroundImg from "@/shared/assets/bg.webp?url";
+import DeskImg from "@/shared/assets/desk.webp?url";
 import MuteButton from "@/shared/components/mute-button";
+import type { Level } from "@/shared/types";
 import LevelResults from "../level-results";
 import Phone from "../phone";
 import QuestionnaireModal from "../questionnaire/questionnaire-modal";
@@ -211,6 +212,44 @@ const LevelProgress = () => {
 	);
 };
 
+const LevelContent = () => {
+	const { result, resultIsLoading } = useLevelContext();
+
+	if (resultIsLoading) {
+		return (
+			<div className="flex h-full items-center justify-center grow">
+				<div className="w-60 flex justify-center flex-col items-center text-2xl font-halvar gap-4">
+					<Lottie animationData={loader} loop={true} />
+					<JumpingText text="Подводим итоги" />
+				</div>
+			</div>
+		);
+	}
+
+	return (
+		<>
+			{!result ? (
+				<SituationProvider>
+					<div className="flex-1 relative">
+						<Background />
+						<Client />
+						<Table />
+						<ClientMessage />
+					</div>
+					<div className="absolute left-2 top-2">
+						<MuteButton />
+					</div>
+					<div className="absolute right-2 top-2">
+						<LevelProgress />
+					</div>
+					<QuestionnaireModal />
+				</SituationProvider>
+			) : null}
+			<LevelResults />
+		</>
+	);
+};
+
 const GameField = () => {
 	const { data, isLoading } = useGenerateLevel();
 
@@ -227,22 +266,7 @@ const GameField = () => {
 
 	return (
 		<LevelProvider level={data}>
-			<SituationProvider>
-				<div className="flex-1 relative">
-					<Background />
-					<Client />
-					<Table />
-					<ClientMessage />
-				</div>
-				<div className="absolute left-2 top-2">
-					<MuteButton />
-				</div>
-				<div className="absolute right-2 top-2">
-					<LevelProgress />
-				</div>
-				<QuestionnaireModal />
-			</SituationProvider>
-			<LevelResults />
+			<LevelContent />
 		</LevelProvider>
 	);
 };

@@ -134,13 +134,16 @@ const BearMessage = () => {
 };
 
 const Phone = () => {
-	const { currentSituation } = useLevelContext();
+	const { currentSituation, result } = useLevelContext();
 	const { play, stop } = useMusicPlayer();
 	const [status, setStatus] = useState<"idle" | "active">("idle");
 	const [hintIsAvailable, setHintIsAvailable] = useState<boolean>(false);
 	const emitter = useEvents();
 
 	const onActive = () => {
+		if (result) {
+			return;
+		}
 		setStatus("active");
 		setHintIsAvailable(true);
 		play("ringtone");

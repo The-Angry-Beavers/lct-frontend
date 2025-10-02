@@ -1,4 +1,4 @@
-import QuestionnaireBooklet from "@shared/assets/questionnaire_booklet.png";
+import QuestionnaireBooklet from "@shared/assets/questionnaire_booklet.webp";
 import { AnimatePresence, motion } from "motion/react";
 import { useCallback, useState } from "react";
 import { useSituationContext } from "@/context/situation-context";

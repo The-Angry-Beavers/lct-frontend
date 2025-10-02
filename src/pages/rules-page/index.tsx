@@ -1,7 +1,7 @@
 import bgImage from "@shared/assets/background.webp?url";
-import mockSpeech from "@shared/assets/mock-speech.png";
+import mockSpeech from "@shared/assets/mock-speech.webp";
 import phoneIdle from "@shared/assets/phone-active.webp?url";
-import questionnaireBooklet from "@shared/assets/questionnaire_booklet.png";
+import questionnaireBooklet from "@shared/assets/questionnaire_booklet.webp";
 import classNames from "classnames";
 import { Link } from "react-router";
 import MuteButton from "@/shared/components/mute-button";

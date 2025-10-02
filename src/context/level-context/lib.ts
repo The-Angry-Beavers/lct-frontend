@@ -15,6 +15,7 @@ export type ILevelContext = {
 	currentSituation: Situation;
 	situations: Situation[];
 	result: LevelResult | null;
+	resultIsLoading: boolean;
 };
 
 export const LevelContext = createContext<ILevelContext | null>(null);

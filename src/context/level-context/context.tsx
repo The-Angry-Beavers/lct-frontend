@@ -40,7 +40,7 @@ const LevelProvider = (props: LevelProviderProps) => {
 
 	const emitter = useEvents();
 
-	const { mutate, data } = useCalcLevelResults();
+	const { mutate, data, isPending } = useCalcLevelResults();
 
 	const onLevelFinish = () => {
 		mutate({
@@ -87,6 +87,7 @@ const LevelProvider = (props: LevelProviderProps) => {
 		situations,
 		// result: mock_result as any as LevelResult,
 		result: data,
+		resultIsLoading: isPending,
 	};
 
 	return (
