@@ -202,9 +202,9 @@ const LevelProgress = () => {
 		useLevelContext();
 	return (
 		<div
-			onClick={() => {
-				goNextSituation();
-			}}
+			// onClick={() => {
+			// 	goNextSituation();
+			// }}
 			className="bg-[#1F1FA233] backdrop-blur-sm rounded-full px-4 h-[2rem] flex items-center whitespace-nowrap text-[0.875rem] tracking-tight"
 		>
 			{currentSituationIndex + 1}/{situations.length} клиентов
