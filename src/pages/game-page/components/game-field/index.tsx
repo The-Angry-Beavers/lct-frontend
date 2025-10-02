@@ -138,10 +138,10 @@ const ClientMessage = () => {
 					className="absolute w-[19.375rem] right-[1rem] bottom-[calc(12rem+8rem)]"
 				>
 					<div className="bg-white translate-y-[100%] rounded-[1rem] border-2 border-black">
-						<div className="text-black px-4 py-2">
+						<div className="text-black px-4 text-sm py-2">
 							<Typewriter text={client.message} speed={35} />
 						</div>
-						<div className="absolute left-[2rem] top-[-1.25rem] rounded-full px-2 py-[0.0625rem] border-2 border-white bg-[#1919EF]">
+						<div className="absolute left-[2rem] top-[-1.25rem] text-sm rounded-full px-2 py-[0.0625rem] border-2 border-white bg-[#1919EF]">
 							{client.first_name}
 						</div>
 					</div>
