@@ -47,28 +47,26 @@ export const Typewriter = ({
 	speed?: number;
 }) => {
 	const [index, setIndex] = useState(0);
+	const [currentSpeed, setCurrentSpeed] = useState(speed);
 
 	useEffect(() => {
-		setIndex(0);
+    	setIndex(0);
+	}, [text]);
+
+	useEffect(() => {
+		if (index >= text.length) return;
 
 		const interval = setInterval(() => {
-			setIndex((prev) => {
-				if (prev >= text.length) {
-					clearInterval(interval);
-
-					return prev;
-				}
-				return prev + 1;
-			});
-		}, speed);
+			setIndex((prev) => Math.min(prev + 1, text.length));
+		}, currentSpeed);
 
 		return () => {
 			clearInterval(interval);
 		};
-	}, [text, speed]);
+	}, [index, text.length, currentSpeed]);
 
 	return (
-		<motion.span key={text} initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+		<motion.span key={text} initial={{ opacity: 0 }} animate={{ opacity: 1 }} onClick={() => setCurrentSpeed(5)}>
 			{text.slice(0, index)}
 		</motion.span>
 	);
