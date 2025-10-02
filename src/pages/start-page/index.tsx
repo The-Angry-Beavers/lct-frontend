@@ -11,13 +11,14 @@ const StartPage = () => {
 
   const [completedOnboarding, setCompletedOnboarding] = useState(false);
   const { play } = useMusicPlayer();
-console.log(completedOnboarding, localStorage.getItem("completed_onboarding"))
+
   useEffect(() => {
     const completed_onboarding = localStorage.getItem("completed_onboarding");
     if (completed_onboarding) {
       setCompletedOnboarding(true);
     }
   }, [localStorage]);
+//  localStorage.clear()
   return (
     <PageContainer className="relative">
       <img

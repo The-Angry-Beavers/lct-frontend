@@ -116,7 +116,7 @@ const ReviewItem = (props: { review: SituationResult["review"][number] }) => {
 						className="flex items-center gap-1 text-[0.625rem] underline underline-offset-2 font-medium"
 					>
 						<InfoIcon />
-						Подробнее про продукт
+						Подробнее о продукте
 					</div>
 				) : null}
 			</div>

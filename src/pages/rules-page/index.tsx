@@ -7,7 +7,7 @@ const RulesPage = () => {
       <img
         src={bgImage}
         alt=""
-        className="w-full h-full object-cover absolute object-center"
+        className="w-full h-full object-cover absolute object-center z-[0]"
       />
       <Link
         to="/"
@@ -31,9 +31,31 @@ const RulesPage = () => {
         </svg>
         ПРАВИЛА ИГРЫ
       </Link>
-	  <div>
-		
-	  </div>
+      <div className="mt-20 z-[1] rounded-2xl border border-white/20 bg-[#1F1FA2] h-full mx-4 mb-6 p-3">
+        <div className="">
+          <h4 className="font-semibold font-halvar">Изучите запрос клиента</h4>
+          <p className="text-xs mt-1">
+            Каждый игровой день к вам будут приходить клиенты со своими
+            историями и целями. Внимательно выслушайте их запрос — часто самое
+            важное кроется в деталях.
+          </p>
+        </div>
+        <hr className="my-4 border border-white/20"/>
+		<div className="">
+          <h4 className="font-semibold font-halvar">Изучите анкету</h4>
+          <p className="text-xs mt-1">
+            На вашем столе лежит анкета клиента. В ней вы найдёте всю ключевую информацию. 
+          </p>
+        </div>
+        <hr className="my-4 border border-white/20"/>
+		<div className="">
+          <h4 className="font-semibold font-halvar">Выберите продукт(-ы)</h4>
+          <p className="text-xs mt-1">
+            Внизу анкеты вы увидите список из 4-х продуктов Газпромбанка. Выберите наиболее подходящие из них для ситуации клиента.
+          </p>
+        </div>
+  
+      </div>
     </div>
   );
 };
