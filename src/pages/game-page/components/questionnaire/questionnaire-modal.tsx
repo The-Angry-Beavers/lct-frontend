@@ -171,10 +171,10 @@ const QuestionnaireModal = () => {
 								{client.is_married
 									? client.gender === "male"
 										? "Женат"
-										: "Замужен"
+										: "Замужем"
 									: client.gender === "male"
 										? "Холост"
-										: "Не замужен"}
+										: "Не замужем"}
 							</p>
 							<span className="font-gzbank font-light text-[#DFE1EE] text-xs">
 								Жилье
