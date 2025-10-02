@@ -19,18 +19,19 @@ const declineYears = (num: number) => {
 	return "лет";
 };
 
-const generateAge = (age: "YOUNG" | "OLD" | "MIDDLE") => {
+const generateAge = (age: "YOUNG" | "OLD" | "MIDDLE", gender: "male" | "female") => {
 	let value: number;
 
 	switch (age) {
 		case "YOUNG":
-			value = Math.floor(Math.random() * (30 - 20 + 1)) + 20;
+			value = Math.floor(Math.random() * (35 - 18 + 1)) + 18;
 			break;
 		case "MIDDLE":
-			value = Math.floor(Math.random() * (50 - 35 + 1)) + 35;
+			value = Math.floor(Math.random() * (64 - 36 + 1)) + 36;
 			break;
 		case "OLD":
-			value = Math.floor(Math.random() * (65 - 50 + 1)) + 50;
+			if (gender === "male") value = Math.floor(Math.random() * (80 - 65 + 1)) + 65;
+			else value = Math.floor(Math.random() * (80 - 60 + 1)) + 60;
 			break;
 		default:
 			value = 0;
@@ -83,7 +84,7 @@ const QuestionnaireModal = () => {
 		useSituationContext();
 
 	const age = useMemo(() => {
-		return generateAge(client.age as "YOUNG" | "MIDDLE" | "OLD");
+		return generateAge(client.age as "YOUNG" | "MIDDLE" | "OLD", client.gender);
 	}, [currentSituationIndex]);
 
 	return (
