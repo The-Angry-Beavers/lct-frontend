@@ -1,4 +1,4 @@
-import type { SVGProps } from "react";
+import { type SVGProps, useState } from "react";
 
 import type { SituationResult } from "@/shared/types";
 import { GoodStars } from "./assets/good-stars";
@@ -141,8 +141,10 @@ const SituationCard = (props: { situation: SituationResult }) => {
 	const { client, rating, review } = props.situation;
 	const startsCount = Math.round(rating / 2);
 
-	const randomMessage =
-		rating >= 7 ? messages[Math.floor(Math.random() * messages.length)] : null;
+	const [randomMessage] = useState(
+		rating >= 7 ? messages[Math.floor(Math.random() * messages.length)] : null,
+	);
+
 	return (
 		<div
 			style={{
