@@ -1,9 +1,9 @@
 import { createBrowserRouter } from "react-router";
 
 import GamePage from "@/pages/game-page";
-import StartPage from "@/pages/start-page";
-import RulesPage from "@/pages/rules-page";
 import OnboardingPage from "@/pages/onboarding-page";
+import RulesPage from "@/pages/rules-page";
+import StartPage from "@/pages/start-page";
 
 const router = createBrowserRouter([
 	{

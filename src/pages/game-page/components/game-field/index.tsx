@@ -1,3 +1,5 @@
+import loader from "@shared/assets/loader.json";
+import Lottie from "lottie-react";
 import { AnimatePresence, motion } from "motion/react";
 import { type ReactNode, useEffect, useState } from "react";
 import { LevelProvider, useLevelContext } from "@/context/level-context";
@@ -15,6 +17,27 @@ import LevelResults from "../level-results";
 import Phone from "../phone";
 import QuestionnaireModal from "../questionnaire/questionnaire-modal";
 import TableQuestionnaire from "../questionnaire/table-questionnaire";
+
+const JumpingText = ({ text }: { text: string }) => {
+	return (
+		<div className="flex space-x-1">
+			{text.split("").map((char, index) => (
+				<motion.span
+					key={index}
+					animate={{ y: [0, -10, 0] }}
+					transition={{
+						repeat: Infinity,
+						repeatType: "loop",
+						duration: 2,
+						delay: index * 0.5,
+					}}
+				>
+					{char}
+				</motion.span>
+			))}
+		</div>
+	);
+};
 
 export const Typewriter = ({
 	text,
@@ -189,7 +212,14 @@ const GameField = () => {
 	const { data, isLoading } = useGenerateLevel();
 
 	if (isLoading || !data) {
-		return null;
+		return (
+			<div className="flex h-full items-center justify-center grow">
+				<div className="w-60 flex justify-center flex-col items-center text-3xl font-halvar">
+					<Lottie animationData={loader} loop={true} />
+					<JumpingText text="Загрузка..." />
+				</div>
+			</div>
+		);
 	}
 
 	return (

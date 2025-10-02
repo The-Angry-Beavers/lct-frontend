@@ -3,7 +3,7 @@ import mockSpeech from "@shared/assets/mock-speech.png";
 import phoneIdle from "@shared/assets/phone-active.webp?url";
 import questionnaireBooklet from "@shared/assets/questionnaire_booklet.png";
 import classNames from "classnames";
-import { Link, useNavigate } from "react-router";
+import { Link } from "react-router";
 import MuteButton from "@/shared/components/mute-button";
 
 const RulesPage = () => {
