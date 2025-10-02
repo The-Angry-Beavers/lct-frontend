@@ -24,11 +24,11 @@ const JumpingText = ({ text }: { text: string }) => {
 			{text.split("").map((char, index) => (
 				<motion.span
 					key={index}
-					animate={{ y: [0, -10, 0] }}
+					animate={{ y: [0, -4, 0] }}
 					transition={{
 						repeat: Infinity,
 						repeatType: "loop",
-						duration: 2,
+						duration: 1,
 						delay: index * 0.5,
 					}}
 				>
@@ -212,9 +212,9 @@ const GameField = () => {
 	if (isLoading || !data) {
 		return (
 			<div className="flex h-full items-center justify-center grow">
-				<div className="w-60 flex justify-center flex-col items-center text-3xl font-halvar">
+				<div className="w-60 flex justify-center flex-col items-center text-2xl font-halvar gap-4">
 					<Lottie animationData={loader} loop={true} />
-					<JumpingText text="Загрузка..." />
+					<JumpingText text="Летим к мечте..." />
 				</div>
 			</div>
 		);
