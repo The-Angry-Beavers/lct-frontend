@@ -2,14 +2,17 @@
 import { createContext, useContext } from "react";
 import background from "./assets/background.mp3?url";
 import chatter from "./assets/chatter.mp3?url";
+import new_chat from "./assets/new-chat.mp3?url";
 import ring from "./assets/ring.mp3?url";
-// import success from "./success.mp3?url";
+import ringtone from "./assets/ringtone.mp3?url";
 
 // Словарь доступных треков
 export const tracks = {
 	background,
 	ring,
 	chatter,
+	new_chat,
+	ringtone,
 } as const;
 
 export type TrackName = keyof typeof tracks;

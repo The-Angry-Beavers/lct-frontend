@@ -143,7 +143,7 @@ const Phone = () => {
 	const onActive = () => {
 		setStatus("active");
 		setHintIsAvailable(true);
-		play("ring");
+		play("ringtone");
 	};
 
 	const { start } = useDelayedActionOnSituationChange(onActive);
@@ -188,7 +188,7 @@ const Phone = () => {
 				}
 				onClick={() => {
 					setStatus("idle");
-					stop("ring");
+					stop("ringtone");
 					emitter.emit("onBearMessage", {
 						message: hintIsAvailable
 							? currentSituation.hint.text

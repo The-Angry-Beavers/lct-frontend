@@ -9,14 +9,19 @@ import {
 export const MusicPlayerProvider = ({ children }: { children: ReactNode }) => {
 	// Рефы аудио
 	const audioRefs = useRef<Record<TrackName, HTMLAudioElement>>({
-		background: Object.assign(new Audio(tracks.background), { loop: true }),
+		background: Object.assign(new Audio(tracks.background), {
+			loop: true,
+			volume: 0.5,
+		}),
 		ring: Object.assign(new Audio(tracks.ring), { loop: true }),
 		chatter: Object.assign(new Audio(tracks.chatter), { loop: true }),
+		new_chat: Object.assign(new Audio(tracks.new_chat)),
+		ringtone: Object.assign(new Audio(tracks.ringtone)),
 		// click: new Audio(tracks.click),
 		// success: new Audio(tracks.success),
 	});
 
-	const [muted, setMuted] = useState(true); // состояние "все звуки выкл/вкл"
+	const [muted, setMuted] = useState(false); // состояние "все звуки выкл/вкл"
 
 	// Инициализация аудио (Safari автоплей)
 	const init = async () => {

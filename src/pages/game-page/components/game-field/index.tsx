@@ -24,18 +24,15 @@ export const Typewriter = ({
 	speed?: number;
 }) => {
 	const [index, setIndex] = useState(0);
-	const { play, stop } = useMusicPlayer();
 
 	useEffect(() => {
 		setIndex(0);
-
-		play("chatter");
 
 		const interval = setInterval(() => {
 			setIndex((prev) => {
 				if (prev >= text.length) {
 					clearInterval(interval);
-					stop("chatter");
+
 					return prev;
 				}
 				return prev + 1;
@@ -44,7 +41,6 @@ export const Typewriter = ({
 
 		return () => {
 			clearInterval(interval);
-			stop("chatter");
 		};
 	}, [text, speed]);
 
@@ -84,9 +80,11 @@ const ClientMessage = () => {
 	const emitter = useEvents();
 	const { client } = useSituationContext();
 	const [hidden, setHidden] = useState<boolean>(true);
+	const { play } = useMusicPlayer();
 
 	useEffect(() => {
 		const unsubscribe = emitter.on("onClientReady", (data) => {
+			play("new_chat");
 			setHidden(false);
 		});
 
