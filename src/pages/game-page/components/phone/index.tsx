@@ -40,7 +40,7 @@ const CloseButton = () => {
 
 export function useDelayedActionOnSituationChange(
 	callback: () => void,
-	delay: number = 5000,
+	delay: number = 30000,
 ) {
 	const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -155,6 +155,8 @@ const Phone = () => {
 
 		const unsb1 = emitter.on("onClientExit", () => {
 			setHintIsAvailable(false);
+			setStatus("idle");
+			stop("ringtone");
 		});
 
 		return () => {
