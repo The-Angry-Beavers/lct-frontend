@@ -42,7 +42,7 @@ const JumpingText = ({ text }: { text: string }) => {
 
 export const Typewriter = ({
 	text,
-	speed = 50,
+	speed = 5,
 }: {
 	text: string;
 	speed?: number;
