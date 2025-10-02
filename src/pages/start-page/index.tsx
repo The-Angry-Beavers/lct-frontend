@@ -39,9 +39,6 @@ const StartPage = () => {
 					</Link>
 					<button
 						onClick={() => {
-							setTimeout(() => {
-								play("background");
-							}, 300);
 							if (completedOnboarding) {
 								navigate("/game");
 							} else {

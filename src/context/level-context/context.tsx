@@ -1,5 +1,6 @@
 import { type ReactNode, useEffect, useMemo, useState } from "react";
 import { useEvents } from "@/packages/emitter";
+import { useMusicPlayer } from "@/packages/music-player";
 import { useCalcLevelResults } from "@/queries";
 import type { Level, LevelResult, Situation } from "@/shared/types";
 import { LevelContext, type SituationAnswer } from "./lib";
@@ -28,6 +29,7 @@ const preloadImages = (urls: string[]) => {
 const LevelProvider = (props: LevelProviderProps) => {
 	const { level } = props;
 	const { situations } = level;
+	const { play } = useMusicPlayer();
 
 	const [currentSituationIndex, setCurrentSituationIndex] = useState(0);
 	const [answers, setAnswers] = useState<SituationAnswer[]>([]);
@@ -48,8 +50,8 @@ const LevelProvider = (props: LevelProviderProps) => {
 	};
 
 	useEffect(() => {
-		console.log("results", data);
-	}, [data]);
+		play("background");
+	}, []);
 
 	const goNextSituation = () => {
 		if (currentSituationIndex === 9) {

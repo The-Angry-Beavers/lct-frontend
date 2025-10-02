@@ -19,7 +19,10 @@ const declineYears = (num: number) => {
 	return "лет";
 };
 
-const generateAge = (age: "YOUNG" | "OLD" | "MIDDLE", gender: "male" | "female") => {
+const generateAge = (
+	age: "YOUNG" | "OLD" | "MIDDLE",
+	gender: "male" | "female",
+) => {
 	let value: number;
 
 	switch (age) {
@@ -30,7 +33,8 @@ const generateAge = (age: "YOUNG" | "OLD" | "MIDDLE", gender: "male" | "female")
 			value = Math.floor(Math.random() * (64 - 36 + 1)) + 36;
 			break;
 		case "OLD":
-			if (gender === "male") value = Math.floor(Math.random() * (80 - 65 + 1)) + 65;
+			if (gender === "male")
+				value = Math.floor(Math.random() * (80 - 65 + 1)) + 65;
 			else value = Math.floor(Math.random() * (80 - 60 + 1)) + 60;
 			break;
 		default:
@@ -58,7 +62,10 @@ const Questions = () => {
 					name="searchEngines"
 					options={options}
 					values={currentAnswers}
-					onChange={setCurrentAnswers}
+					onChange={(value) => {
+						console.log(value);
+						setCurrentAnswers(value);
+					}}
 				/>
 			</div>
 			<div className="fixed bottom-4 left-0 w-full px-4">
@@ -135,7 +142,7 @@ const QuestionnaireModal = () => {
 						<img
 							alt=""
 							src={client.sprite}
-							className="bg-[#6188E4] rounded-lg h-full object-cover mb-4"
+							className="bg-[#6188E4] rounded-lg h-full w-min object-cover mb-4"
 						/>
 						<div>
 							<h2 className="font-halvar font-medium text-2xl leading-[150%]">

@@ -28,7 +28,8 @@ export const MusicPlayerProvider = ({ children }: { children: ReactNode }) => {
 		for (const key of Object.keys(audioRefs.current) as TrackName[]) {
 			const audio = audioRefs.current[key];
 			try {
-				await audio.play();
+				audio.muted = true;
+				audio.play();
 				audio.pause();
 				audio.currentTime = 0;
 				audio.muted = muted;
@@ -85,6 +86,7 @@ export const MusicPlayerProvider = ({ children }: { children: ReactNode }) => {
 	useEffect(() => {
 		const handler = async () => {
 			await init();
+			setTimeout(() => play("background"));
 			window.removeEventListener("click", handler);
 			window.removeEventListener("touchstart", handler);
 			window.removeEventListener("keydown", handler);

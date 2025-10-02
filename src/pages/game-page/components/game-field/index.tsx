@@ -50,7 +50,7 @@ export const Typewriter = ({
 	const [currentSpeed, setCurrentSpeed] = useState(speed);
 
 	useEffect(() => {
-    	setIndex(0);
+		setIndex(0);
 	}, [text]);
 
 	useEffect(() => {
@@ -66,7 +66,12 @@ export const Typewriter = ({
 	}, [index, text.length, currentSpeed]);
 
 	return (
-		<motion.span key={text} initial={{ opacity: 0 }} animate={{ opacity: 1 }} onClick={() => setCurrentSpeed(5)}>
+		<motion.span
+			key={text}
+			initial={{ opacity: 0 }}
+			animate={{ opacity: 1 }}
+			onClick={() => setCurrentSpeed(5)}
+		>
 			{text.slice(0, index)}
 		</motion.span>
 	);
