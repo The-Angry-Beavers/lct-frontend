@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+
 import Stars from "./assets/stars";
 import { useLevelResults } from "./lib";
 
@@ -17,12 +18,15 @@ const Progress = () => {
 					</div>
 					<div className="text-[0.75rem]">Довольны: {totalHappyClients}/10</div>
 				</div>
-				<div className="w-full h-4 bg-[#8181CA]  relative rounded-[0.75rem] overflow-hidden">
+				<div className="w-full h-4 bg-[#8181CA] relative rounded-[0.75rem] overflow-hidden">
+					<div className="absolute bg-[#DFE1EE] h-full left-[70%] right-0 flex items-center justify-center text-[#6288E5] font-halvar">
+						ПРИЗ
+					</div>
 					<motion.div
 						transition={{ delay: 0.5 }}
 						initial={{ width: 0 }}
 						animate={{ width: result.total_rating + "%" }}
-						className="absolute bg-[#DD40DB] h-full"
+						className="absolute bg-[#DD40DB] h-full mix-blend-overlay"
 					/>
 				</div>
 			</div>
