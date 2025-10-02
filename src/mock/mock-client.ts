@@ -3,10 +3,11 @@ import img2 from "./student-man.webp?url";
 import img1 from "./student-woman.webp?url";
 
 export const MockClient1: Client = {
-	name: "Маша",
+	first_name: "Маша",
+	last_name: "Петрова",
 	gender: "female",
 	age: "young",
-	job_spehere: "Студент",
+	job_sphere: "Студент",
 	is_married: false,
 	is_have_child: false,
 	is_have_real_estate: false,
@@ -17,10 +18,11 @@ export const MockClient1: Client = {
 };
 
 export const MockClient2: Client = {
-	name: "Саша",
+	first_name: "Саша",
+	last_name: "Петров",
 	gender: "male",
 	age: "young",
-	job_spehere: "Студент",
+	job_sphere: "Студент",
 	is_married: false,
 	is_have_child: false,
 	is_have_real_estate: false,

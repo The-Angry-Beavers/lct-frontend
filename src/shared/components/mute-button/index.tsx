@@ -1,7 +1,6 @@
 import * as motion from "motion/react-client";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useMusicPlayer } from "@/packages/music-player";
-import { useTapAnimation } from "@/shared/lib/hooks/use-tap-animation";
 
 const NoteSvg = () => {
 	return (
@@ -60,7 +59,7 @@ const LineSvg = ({ muted }: { muted: boolean }) => {
 };
 
 const MuteButton = () => {
-	const { muted, play, toggleMute, mute, unMute } = useMusicPlayer();
+	const { muted, toggleMute } = useMusicPlayer();
 
 	const [isTapped, setIsTapped] = useState(false);
 
